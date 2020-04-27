@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B787A0E45FE413D51FD0469 /* libPods-PractiseApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77784D0E82F16B4E44BADB50 /* libPods-PractiseApp.a */; };
 		6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C712456B93E000AFCEA /* AppDelegate.m */; };
 		6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C742456B93E000AFCEA /* SceneDelegate.m */; };
 		6D671C782456B93E000AFCEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C772456B93E000AFCEA /* ViewController.m */; };
@@ -15,9 +16,17 @@
 		6D671C802456B940000AFCEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D671C7F2456B940000AFCEA /* Assets.xcassets */; };
 		6D671C832456B940000AFCEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D671C812456B940000AFCEA /* LaunchScreen.storyboard */; };
 		6D671C862456B940000AFCEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C852456B940000AFCEA /* main.m */; };
+		6D671C8D2456BAD5000AFCEA /* libDoraemonKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D671C8C2456BAD5000AFCEA /* libDoraemonKit.a */; };
+		6D671C922456BAF5000AFCEA /* libIQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D671C912456BAF5000AFCEA /* libIQKeyboardManager.a */; };
+		6D671C942456BAF9000AFCEA /* libMasonry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D671C932456BAF9000AFCEA /* libMasonry.a */; };
+		6D671C962456BB06000AFCEA /* libPods-PractiseApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D671C952456BB06000AFCEA /* libPods-PractiseApp.a */; };
+		6D671C982456BB0A000AFCEA /* libSocketRocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D671C972456BB0A000AFCEA /* libSocketRocket.a */; };
+		6D671C9A2456BB0D000AFCEA /* libZYCornerRadius.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D671C992456BB0D000AFCEA /* libZYCornerRadius.a */; };
+		6D671CA32456BD52000AFCEA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CA22456BD52000AFCEA /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FACEB32EDC9EAD4C2787A22 /* Pods-PractiseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PractiseApp.release.xcconfig"; path = "Target Support Files/Pods-PractiseApp/Pods-PractiseApp.release.xcconfig"; sourceTree = "<group>"; };
 		6D671C6D2456B93E000AFCEA /* PractiseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PractiseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C702456B93E000AFCEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D671C712456B93E000AFCEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -31,6 +40,17 @@
 		6D671C822456B940000AFCEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D671C842456B940000AFCEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D671C852456B940000AFCEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6D671C8C2456BAD5000AFCEA /* libDoraemonKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDoraemonKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D671C8E2456BAE5000AFCEA /* DoraemonKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = DoraemonKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D671C912456BAF5000AFCEA /* libIQKeyboardManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIQKeyboardManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D671C932456BAF9000AFCEA /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D671C952456BB06000AFCEA /* libPods-PractiseApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-PractiseApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D671C972456BB0A000AFCEA /* libSocketRocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSocketRocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D671C992456BB0D000AFCEA /* libZYCornerRadius.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libZYCornerRadius.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D671CA12456BD52000AFCEA /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		6D671CA22456BD52000AFCEA /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		77784D0E82F16B4E44BADB50 /* libPods-PractiseApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PractiseApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BE93AD753810419B6038C41 /* Pods-PractiseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PractiseApp.debug.xcconfig"; path = "Target Support Files/Pods-PractiseApp/Pods-PractiseApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,17 +58,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D671C922456BAF5000AFCEA /* libIQKeyboardManager.a in Frameworks */,
+				6D671C962456BB06000AFCEA /* libPods-PractiseApp.a in Frameworks */,
+				6D671C9A2456BB0D000AFCEA /* libZYCornerRadius.a in Frameworks */,
+				4B787A0E45FE413D51FD0469 /* libPods-PractiseApp.a in Frameworks */,
+				6D671C8D2456BAD5000AFCEA /* libDoraemonKit.a in Frameworks */,
+				6D671C982456BB0A000AFCEA /* libSocketRocket.a in Frameworks */,
+				6D671C942456BAF9000AFCEA /* libMasonry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A612D481FD88C4AFD37AF67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7BE93AD753810419B6038C41 /* Pods-PractiseApp.debug.xcconfig */,
+				1FACEB32EDC9EAD4C2787A22 /* Pods-PractiseApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6D671C642456B93E000AFCEA = {
 			isa = PBXGroup;
 			children = (
 				6D671C6F2456B93E000AFCEA /* PractiseApp */,
 				6D671C6E2456B93E000AFCEA /* Products */,
+				0A612D481FD88C4AFD37AF67 /* Pods */,
+				D7C613D515C3606789B4E2F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,8 +113,33 @@
 				6D671C842456B940000AFCEA /* Info.plist */,
 				6D671C852456B940000AFCEA /* main.m */,
 				6D671C7C2456B93E000AFCEA /* PractiseApp.xcdatamodeld */,
+				6D671CA02456BCF0000AFCEA /* BaseClass */,
 			);
 			path = PractiseApp;
+			sourceTree = "<group>";
+		};
+		6D671CA02456BCF0000AFCEA /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				6D671CA12456BD52000AFCEA /* BaseViewController.h */,
+				6D671CA22456BD52000AFCEA /* BaseViewController.m */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		D7C613D515C3606789B4E2F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D671C992456BB0D000AFCEA /* libZYCornerRadius.a */,
+				6D671C972456BB0A000AFCEA /* libSocketRocket.a */,
+				6D671C952456BB06000AFCEA /* libPods-PractiseApp.a */,
+				6D671C932456BAF9000AFCEA /* libMasonry.a */,
+				6D671C912456BAF5000AFCEA /* libIQKeyboardManager.a */,
+				6D671C8E2456BAE5000AFCEA /* DoraemonKit.bundle */,
+				6D671C8C2456BAD5000AFCEA /* libDoraemonKit.a */,
+				77784D0E82F16B4E44BADB50 /* libPods-PractiseApp.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D671C892456B940000AFCEA /* Build configuration list for PBXNativeTarget "PractiseApp" */;
 			buildPhases = (
+				64538AAEB376965E0E6C4500 /* [CP] Check Pods Manifest.lock */,
 				6D671C692456B93E000AFCEA /* Sources */,
 				6D671C6A2456B93E000AFCEA /* Frameworks */,
 				6D671C6B2456B93E000AFCEA /* Resources */,
+				50B0D1B6B26826A2FCF69A14 /* [CP] Embed Pods Frameworks */,
+				A5010AE110737FE0650BB8A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +210,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		50B0D1B6B26826A2FCF69A14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PractiseApp/Pods-PractiseApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PractiseApp/Pods-PractiseApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PractiseApp/Pods-PractiseApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64538AAEB376965E0E6C4500 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PractiseApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5010AE110737FE0650BB8A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PractiseApp/Pods-PractiseApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PractiseApp/Pods-PractiseApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PractiseApp/Pods-PractiseApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6D671C692456B93E000AFCEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -153,6 +278,7 @@
 				6D671C7E2456B93E000AFCEA /* PractiseApp.xcdatamodeld in Sources */,
 				6D671C782456B93E000AFCEA /* ViewController.m in Sources */,
 				6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */,
+				6D671CA32456BD52000AFCEA /* BaseViewController.m in Sources */,
 				6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +417,7 @@
 		};
 		6D671C8A2456B940000AFCEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BE93AD753810419B6038C41 /* Pods-PractiseApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -308,6 +435,7 @@
 		};
 		6D671C8B2456B940000AFCEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FACEB32EDC9EAD4C2787A22 /* Pods-PractiseApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

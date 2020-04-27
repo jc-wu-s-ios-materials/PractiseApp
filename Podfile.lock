@@ -1,0 +1,38 @@
+PODS:
+  - DoraemonKit/Core (3.0.1)
+  - DoraemonKit/WithGPS (3.0.1):
+    - DoraemonKit/Core
+  - DoraemonKit/WithLoad (3.0.1):
+    - DoraemonKit/Core
+  - IQKeyboardManager (6.5.5)
+  - Masonry (1.1.0)
+  - SocketRocket (0.5.1)
+  - ZYCornerRadius (1.0.2)
+
+DEPENDENCIES:
+  - DoraemonKit/Core (~> 3.0.1)
+  - DoraemonKit/WithGPS (~> 3.0.1)
+  - DoraemonKit/WithLoad (~> 3.0.1)
+  - IQKeyboardManager
+  - Masonry
+  - SocketRocket
+  - ZYCornerRadius (~> 1.0.2)
+
+SPEC REPOS:
+  trunk:
+    - DoraemonKit
+    - IQKeyboardManager
+    - Masonry
+    - SocketRocket
+    - ZYCornerRadius
+
+SPEC CHECKSUMS:
+  DoraemonKit: 00f8c55bec06e240f25e18ec5b7faa012dfbb827
+  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
+
+PODFILE CHECKSUM: ad9bcb6724a442eea3d43c1c0f6e90e612b979ed
+
+COCOAPODS: 1.9.1
