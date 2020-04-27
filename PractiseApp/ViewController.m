@@ -9,6 +9,14 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (nonatomic, strong) UILabel *LabelForShowResults;
+//btn1 - btn3 练习 NotificationCenter DefaultCenter
+@property (nonatomic, strong) UIButton *btn1;
+@property (nonatomic, strong) UIButton *btn2;
+@property (nonatomic, strong) UIButton *btn3;
+//前往其他UIViewController
+@property (nonatomic, strong) UIButton *goNextBtn1;
+
 
 @end
 
@@ -16,8 +24,118 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //********注册通知********
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getNotificationWithNil)
+                                                name:@"btn1点击" object:nil];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getNotificationWithNonnullObj:)
+                                                name:@"btn2点击" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getNotificationWithNonnullUserInfo:)
+                                                name:@"btn3点击" object:nil];
+    //********注册通知********
+    
+    //页面标题
+    UILabel *label = [[UILabel alloc]init];
+    [self.view addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.centerY.mas_equalTo(self.view.mas_centerY).offset(-150);
+    }];
+    label.font = [UIFont systemFontOfSize:40.f];
+    [label setText:@"NotificationCenter DefaultCenter简单使用"];
+    //展示label
+    self.LabelForShowResults = [[UILabel alloc]init];
+    [self.view addSubview:self.LabelForShowResults];
+    [self.LabelForShowResults mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.centerY.mas_equalTo(self.view.mas_centerY).offset(-100);
+    }];
+    [self.LabelForShowResults setText:@"暂时无内容"];
+    //btn1 无参数传递消息btn
+    self.btn1 = [[UIButton alloc]init];
+    self.btn1.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:.7];
+    [self.btn1 setTitle:@"发送一个无参数的通知" forState:UIControlStateNormal];
+    [self.btn1 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btn1];
+    [self.btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-100);
+        make.leading.mas_equalTo(self.view.mas_leading).offset(20);
+    }];
+    //btn2 有参数传递消息btn 使用参数为 Notification.object
+    self.btn2 = [[UIButton alloc]init];
+    self.btn2.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:.7];
+    [self.btn2 setTitle:@"发送一个有Notification.object参数的Notification" forState:UIControlStateNormal];
+    [self.btn2 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btn2];
+    [self.btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.btn1);
+        make.leading.mas_equalTo(self.btn1.mas_trailing).offset(10);
+    }];
+    //btn3 有参数传递消息btn 使用参数为 Notification.userInfo
+    self.btn3 = [[UIButton alloc]init];
+    self.btn3.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:.7];
+    [self.btn3 setTitle:@"发送一个有Notification.userInfo参数的Notification" forState:UIControlStateNormal];
+    [self.btn3 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btn3];
+    [self.btn3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.btn1);
+        make.leading.mas_equalTo(self.btn2.mas_trailing).offset(10);
+    }];
+    //goNextBtn1去另一个ViewController
+    self.goNextBtn1 = [[UIButton alloc]init];
+    self.goNextBtn1.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
+//    self.goNextBtn1 setTitle:@"" forState:<#(UIControlState)#>
 }
 
+-(void)btnClick:(id)sender{
+    if (sender == self.btn1) {
+        //发送一个无对象通知
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"btn1点击" object:nil];
+    }else if (sender == self.btn2){
+        //发送一个有对象通知
+//        NSString * msg = [NSString stringWithFormat:@"发消息的sender性质为:%@",self.btn2];//与76行对应的
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"btn2点击" object:self.btn1];
+    }else if (sender == self.btn3){
+//        NSDictionary *dic1 = [NSDictionary dictionaryWithObject:@"userInfo消息dic1" forKey:@"key1"];//创建只有一对键值对的字典
+//        NSDictionary *dic2 = @{@"key1":@"value1",@"key2":@"value2",@"key3":@"value3"};//快速创建字典，后面重复的不会加入
+        NSMutableDictionary *dic3 = [NSMutableDictionary dictionary];//可加入值的NSMutableDictionary
+        [dic3 setValue:@"dic2:value1" forKey:@"key1"];
+        [dic3 setValue:@"dic2:value2" forKey:@"key2"];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"btn3点击" object:nil userInfo:dic3];
+    }
+}
+/*
+ *NSNotification定义
+ @interface NSNotification : NSObject <NSCopying, NSCoding>
+ @property (readonly, copy) NSNotificationName name;
+ @property (nullable, readonly, retain) id object;
+ @property (nullable, readonly, copy) NSDictionary *userInfo;
+ - (instancetype)initWithName:(NSNotificationName)name object:(nullable id)object userInfo:(nullable NSDictionary *)userInfo API_AVAILABLE(macos(10.6), ios(4.0), watchos(2.0), tvos(9.0)) NS_DESIGNATED_INITIALIZER;
+ - (nullable instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
+ @end
+ */
+-(void)getNotificationWithNil{
+    [self.LabelForShowResults setText:@"收到了btn1的点击通知"];
+}
+-(void)getNotificationWithNonnullObj:(NSNotification*)notification{
+//    NSString * msg = notification.object;//这一行是已知发过来的notification.object的类型，若不知道则很难正确处理
+    NSString* msg = [NSString stringWithFormat:@"%@",notification.object];
+    [self.LabelForShowResults setText:msg];
+}
+-(void)getNotificationWithNonnullUserInfo:(NSNotification*)notification{
+    NSDictionary *dic = notification.userInfo;
+    [self.LabelForShowResults setText:[dic valueForKey:@"key1"]];
+}
+-(void)dealloc{
+    //NSNotificationCenter 结束时需要注销观察者
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+//    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"btn3点击" object:nil];//精确地移除某观察者
+//    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"btn2点击" object:self.btn1];//更精确地移除某观察者
+    /*
+     通知中心对响应者observer是使用unsafe_unretained修饰，当响应者释放会出现野指针，向野指针发送消息造成崩溃；
+     在iOS n(更新的系统版本有待考证)之后，苹果对其做了优化，会在响应者调用dealloc方法的时候执行removeObserver:方法？
+     */
+}
 
 @end
