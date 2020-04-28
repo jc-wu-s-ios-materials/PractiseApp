@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ThreadViewController.h"
+#import "GCDViewController.h"
 @interface ViewController ()
 @property (nonatomic, strong) UILabel *LabelForShowResults;
 //btn1 - btn3 练习 NotificationCenter DefaultCenter
@@ -15,7 +16,8 @@
 @property (nonatomic, strong) UIButton *btn2;
 @property (nonatomic, strong) UIButton *btn3;
 //前往其他UIViewController
-@property (nonatomic, strong) UIButton *goNextBtn1;
+@property (nonatomic, strong) UIButton *goNextBtn1;//NSThread多线程练习
+@property (nonatomic, strong) UIButton *goNextBtn2;//GCD多线程练习
 
 
 @end
@@ -101,7 +103,9 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [NSThread sleepForTimeInterval:1];
-    [self gotoNextVCViaBtn:self.goNextBtn1];
+    
+//    [self gotoNextVCViaBtn:self.goNextBtn1];//自动进入NSThread练习
+    [self gotoNextVCViaBtn:self.goNextBtn2];//自动进入GCD练习
 }
 
 -(void)btnClick:(id)sender{
@@ -122,8 +126,12 @@
     }
 }
 -(void)gotoNextVCViaBtn:(id)sender{
-    if (sender == self.goNextBtn1) {//前往多线程售票
+    if (sender == self.goNextBtn1) {//前往NSThread多线程
         ThreadViewController *vc = [[ThreadViewController alloc]init];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    }else if (sender == self.goNextBtn2){//前往GCD多线程
+        GCDViewController *vc = [[GCDViewController alloc]init];
         vc.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:vc animated:YES completion:nil];
     }

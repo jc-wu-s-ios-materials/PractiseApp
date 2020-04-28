@@ -24,6 +24,7 @@
 		6D671C9A2456BB0D000AFCEA /* libZYCornerRadius.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D671C992456BB0D000AFCEA /* libZYCornerRadius.a */; };
 		6D671CA32456BD52000AFCEA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CA22456BD52000AFCEA /* BaseViewController.m */; };
 		6D671CAA2457C6B8000AFCEA /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CA92457C6B8000AFCEA /* ThreadViewController.m */; };
+		6D671CB0245801C5000AFCEA /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CAF245801C5000AFCEA /* GCDViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		6D671CA22456BD52000AFCEA /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		6D671CA82457C6B8000AFCEA /* ThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
 		6D671CA92457C6B8000AFCEA /* ThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
+		6D671CAE245801C5000AFCEA /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
+		6D671CAF245801C5000AFCEA /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
 		77784D0E82F16B4E44BADB50 /* libPods-PractiseApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PractiseApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE93AD753810419B6038C41 /* Pods-PractiseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PractiseApp.debug.xcconfig"; path = "Target Support Files/Pods-PractiseApp/Pods-PractiseApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,7 +119,7 @@
 				6D671C842456B940000AFCEA /* Info.plist */,
 				6D671C852456B940000AFCEA /* main.m */,
 				6D671C7C2456B93E000AFCEA /* PractiseApp.xcdatamodeld */,
-				6D671CA72457C68C000AFCEA /* vc */,
+				6D671CA72457C68C000AFCEA /* MultiThreadViewControllers */,
 				6D671CA02456BCF0000AFCEA /* BaseClass */,
 			);
 			path = PractiseApp;
@@ -131,13 +134,15 @@
 			path = BaseClass;
 			sourceTree = "<group>";
 		};
-		6D671CA72457C68C000AFCEA /* vc */ = {
+		6D671CA72457C68C000AFCEA /* MultiThreadViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				6D671CA82457C6B8000AFCEA /* ThreadViewController.h */,
 				6D671CA92457C6B8000AFCEA /* ThreadViewController.m */,
+				6D671CAE245801C5000AFCEA /* GCDViewController.h */,
+				6D671CAF245801C5000AFCEA /* GCDViewController.m */,
 			);
-			path = vc;
+			path = MultiThreadViewControllers;
 			sourceTree = "<group>";
 		};
 		D7C613D515C3606789B4E2F5 /* Frameworks */ = {
@@ -290,6 +295,7 @@
 				6D671CAA2457C6B8000AFCEA /* ThreadViewController.m in Sources */,
 				6D671C862456B940000AFCEA /* main.m in Sources */,
 				6D671C7E2456B93E000AFCEA /* PractiseApp.xcdatamodeld in Sources */,
+				6D671CB0245801C5000AFCEA /* GCDViewController.m in Sources */,
 				6D671C782456B93E000AFCEA /* ViewController.m in Sources */,
 				6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */,
 				6D671CA32456BD52000AFCEA /* BaseViewController.m in Sources */,
