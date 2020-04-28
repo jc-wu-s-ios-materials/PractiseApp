@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ThreadViewController.h"
 @interface ViewController ()
 @property (nonatomic, strong) UILabel *LabelForShowResults;
 //btn1 - btn3 练习 NotificationCenter DefaultCenter
@@ -85,16 +85,16 @@
     //goNextBtn1去另一个ViewController
     self.goNextBtn1 = [[UIButton alloc]init];
     self.goNextBtn1.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
-//    self.goNextBtn1 setTitle:@"" forState:<#(UIControlState)#>
+    [self.goNextBtn1 setTitle:@"前往 多线程售票" forState:UIControlStateNormal];
+    
 }
 
 -(void)btnClick:(id)sender{
     if (sender == self.btn1) {
-        //发送一个无对象通知
+        //发送一个无对象通知，只有注册了name==@"btn1点击"&&object==nil的观察者可以收到此通知
         [[NSNotificationCenter defaultCenter]postNotificationName:@"btn1点击" object:nil];
     }else if (sender == self.btn2){
-        //发送一个有对象通知
-//        NSString * msg = [NSString stringWithFormat:@"发消息的sender性质为:%@",self.btn2];//与76行对应的
+        //发送一个有对象通知,只有注册了name==@"btn2点击"&&object==_btn1的观察者可以收到此通知
         [[NSNotificationCenter defaultCenter]postNotificationName:@"btn2点击" object:self.btn1];
     }else if (sender == self.btn3){
 //        NSDictionary *dic1 = [NSDictionary dictionaryWithObject:@"userInfo消息dic1" forKey:@"key1"];//创建只有一对键值对的字典
@@ -102,7 +102,15 @@
         NSMutableDictionary *dic3 = [NSMutableDictionary dictionary];//可加入值的NSMutableDictionary
         [dic3 setValue:@"dic2:value1" forKey:@"key1"];
         [dic3 setValue:@"dic2:value2" forKey:@"key2"];
+        //发送一个有userInfo但是没有object的通知，只有注册了name==@"btn3点击"&&obje==nil的观察者可以收到此通知
         [[NSNotificationCenter defaultCenter]postNotificationName:@"btn3点击" object:nil userInfo:dic3];
+    }
+}
+-(void)gotoThreadVCViaBtn:(id)sender{
+    if (sender == self.goNextBtn1) {//前往多线程售票
+        ThreadViewController *vc = [[ThreadViewController alloc]init];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
     }
 }
 /*
@@ -119,8 +127,8 @@
     [self.LabelForShowResults setText:@"收到了btn1的点击通知"];
 }
 -(void)getNotificationWithNonnullObj:(NSNotification*)notification{
-//    NSString * msg = notification.object;//这一行是已知发过来的notification.object的类型，若不知道则很难正确处理
-    NSString* msg = [NSString stringWithFormat:@"%@",notification.object];
+    id obj = notification.object;//id-动态类型，NSObject-静态类型-需要强制转换否则在使用具体类型方法时编译不通过
+    NSString* msg = [NSString stringWithFormat:@"%@",obj];
     [self.LabelForShowResults setText:msg];
 }
 -(void)getNotificationWithNonnullUserInfo:(NSNotification*)notification{
