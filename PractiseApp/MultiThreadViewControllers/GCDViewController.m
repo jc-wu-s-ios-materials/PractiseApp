@@ -9,7 +9,6 @@
 #import "GCDViewController.h"
 
 @interface GCDViewController ()
-@property (nonatomic, strong) UIButton *closeBtn;
 
 @end
 
@@ -17,16 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.frame = [UIScreen mainScreen].bounds;
-    self.view.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:.7];
-    self.closeBtn = [[UIButton alloc]init];
-    [self.closeBtn setTitle:@"返回主页面" forState:UIControlStateNormal];
-    [self.closeBtn addTarget:self action:@selector(closeSelf) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.closeBtn];
-    [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.mas_top).offset(20);
-        make.trailing.mas_equalTo(self.view.mas_trailing).offset(-20);
-    }];
     
     /* GCD 使用的步骤: 1.定制任务 2.将任务添加到队列中，指定运行方式。
      * GCD会自动将队列中的任务取出，放到对应的线程中执行。任务的取出遵循队列的FIFO原则，先进先出。

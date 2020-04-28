@@ -16,17 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self hidMyScreen];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)hidMyScreen{//上班摸鱼时保持黑屏幕
+    self.view.frame = [UIScreen mainScreen].bounds;
+    self.view.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:.7];
+    self.closeBtn = [[UIButton alloc]init];
+    [self.closeBtn setTitle:@"返回主页面" forState:UIControlStateNormal];
+    [self.closeBtn addTarget:self action:@selector(closeSelf) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.closeBtn];
+    [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view.mas_top).offset(20);
+        make.trailing.mas_equalTo(self.view.mas_trailing).offset(-20);
+    }];
 }
-*/
 
 @end

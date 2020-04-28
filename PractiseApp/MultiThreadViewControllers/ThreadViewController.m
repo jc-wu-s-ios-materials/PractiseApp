@@ -9,7 +9,6 @@
 #import "ThreadViewController.h"
 
 @interface ThreadViewController ()
-@property (nonatomic, strong) UIButton *closeBtn;
 
 @end
 
@@ -17,16 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.frame = [UIScreen mainScreen].bounds;
-    self.view.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:.8];
-    self.closeBtn = [[UIButton alloc]init];
-    [self.closeBtn setTitle:@"返回主页面" forState:UIControlStateNormal];
-    [self.closeBtn addTarget:self action:@selector(closeSelf) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.closeBtn];
-    [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.mas_top).offset(20);
-        make.trailing.mas_equalTo(self.view.mas_trailing).offset(-20);
-    }];
     
     
     __block NSInteger number = 10;
