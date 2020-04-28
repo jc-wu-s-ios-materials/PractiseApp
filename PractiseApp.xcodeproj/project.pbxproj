@@ -25,6 +25,7 @@
 		6D671CA32456BD52000AFCEA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CA22456BD52000AFCEA /* BaseViewController.m */; };
 		6D671CAA2457C6B8000AFCEA /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CA92457C6B8000AFCEA /* ThreadViewController.m */; };
 		6D671CB0245801C5000AFCEA /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CAF245801C5000AFCEA /* GCDViewController.m */; };
+		6D671CB324583CEA000AFCEA /* NSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CB224583CEA000AFCEA /* NSOperationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		6D671CA92457C6B8000AFCEA /* ThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
 		6D671CAE245801C5000AFCEA /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
 		6D671CAF245801C5000AFCEA /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
+		6D671CB124583CEA000AFCEA /* NSOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationViewController.h; sourceTree = "<group>"; };
+		6D671CB224583CEA000AFCEA /* NSOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationViewController.m; sourceTree = "<group>"; };
 		77784D0E82F16B4E44BADB50 /* libPods-PractiseApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PractiseApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE93AD753810419B6038C41 /* Pods-PractiseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PractiseApp.debug.xcconfig"; path = "Target Support Files/Pods-PractiseApp/Pods-PractiseApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +144,8 @@
 				6D671CA92457C6B8000AFCEA /* ThreadViewController.m */,
 				6D671CAE245801C5000AFCEA /* GCDViewController.h */,
 				6D671CAF245801C5000AFCEA /* GCDViewController.m */,
+				6D671CB124583CEA000AFCEA /* NSOperationViewController.h */,
+				6D671CB224583CEA000AFCEA /* NSOperationViewController.m */,
 			);
 			path = MultiThreadViewControllers;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */,
 				6D671CA32456BD52000AFCEA /* BaseViewController.m in Sources */,
 				6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */,
+				6D671CB324583CEA000AFCEA /* NSOperationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

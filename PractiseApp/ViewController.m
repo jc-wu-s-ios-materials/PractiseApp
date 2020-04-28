@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ThreadViewController.h"
 #import "GCDViewController.h"
+#import "NSOperationViewController.h"
 @interface ViewController ()
 @property (nonatomic, strong) UILabel *LabelForShowResults;
 //btn1 - btn3 练习 NotificationCenter DefaultCenter
@@ -18,6 +19,8 @@
 //前往其他UIViewController
 @property (nonatomic, strong) UIButton *goNextBtn1;//NSThread多线程练习
 @property (nonatomic, strong) UIButton *goNextBtn2;//GCD多线程练习
+@property (nonatomic, strong) UIButton *goNextBtn3;//NSOperation练习
+
 
 
 @end
@@ -37,63 +40,9 @@
                                                 name:@"btn3点击" object:nil];
     //********注册通知********
     
-    //页面标题
-    UILabel *label = [[UILabel alloc]init];
-    [self.view addSubview:label];
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.view);
-        make.centerY.mas_equalTo(self.view.mas_centerY).offset(-150);
-    }];
-    label.font = [UIFont systemFontOfSize:40.f];
-    [label setText:@"NotificationCenter DefaultCenter简单使用"];
-    //展示label
-    self.LabelForShowResults = [[UILabel alloc]init];
-    [self.view addSubview:self.LabelForShowResults];
-    [self.LabelForShowResults mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.view);
-        make.centerY.mas_equalTo(self.view.mas_centerY).offset(-100);
-    }];
-    [self.LabelForShowResults setText:@"暂时无内容"];
-    //btn1 无参数传递消息btn
-    self.btn1 = [[UIButton alloc]init];
-    self.btn1.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:.7];
-    [self.btn1 setTitle:@"发送一个无参数的通知" forState:UIControlStateNormal];
-    [self.btn1 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.btn1];
-    [self.btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-100);
-        make.leading.mas_equalTo(self.view.mas_leading).offset(20);
-    }];
-    //btn2 有参数传递消息btn 使用参数为 Notification.object
-    self.btn2 = [[UIButton alloc]init];
-    self.btn2.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:.7];
-    [self.btn2 setTitle:@"发送一个有Notification.object参数的Notification" forState:UIControlStateNormal];
-    [self.btn2 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.btn2];
-    [self.btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.btn1);
-        make.leading.mas_equalTo(self.btn1.mas_trailing).offset(10);
-    }];
-    //btn3 有参数传递消息btn 使用参数为 Notification.userInfo
-    self.btn3 = [[UIButton alloc]init];
-    self.btn3.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:.7];
-    [self.btn3 setTitle:@"发送一个有Notification.userInfo参数的Notification" forState:UIControlStateNormal];
-    [self.btn3 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.btn3];
-    [self.btn3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.btn1);
-        make.leading.mas_equalTo(self.btn2.mas_trailing).offset(10);
-    }];
-    //goNextBtn1去另一个ViewController
-    self.goNextBtn1 = [[UIButton alloc]init];
-    self.goNextBtn1.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
-    [self.goNextBtn1 setTitle:@"前往 多线程售票" forState:UIControlStateNormal];
-    [self.goNextBtn1 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.goNextBtn1];
-    [self.goNextBtn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.btn1.mas_bottom).offset(10);
-        make.leading.mas_equalTo(self.btn1.mas_leading);
-    }];
+    [self createLabels];
+    [self createNSThreadBtns];
+    [self createGotoNextBtns];
     
     UIView *mask = [[UIView alloc]initWithFrame:self.view.frame];
     mask.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:.8];
@@ -105,7 +54,8 @@
     [NSThread sleepForTimeInterval:1];
     
 //    [self gotoNextVCViaBtn:self.goNextBtn1];//自动进入NSThread练习
-    [self gotoNextVCViaBtn:self.goNextBtn2];//自动进入GCD练习
+//    [self gotoNextVCViaBtn:self.goNextBtn2];//自动进入GCD练习
+    [self gotoNextVCViaBtn:self.goNextBtn3];//自动进入NSOperation练习
 }
 
 -(void)btnClick:(id)sender{
@@ -132,6 +82,10 @@
         [self presentViewController:vc animated:YES completion:nil];
     }else if (sender == self.goNextBtn2){//前往GCD多线程
         GCDViewController *vc = [[GCDViewController alloc]init];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    }else if (sender == self.goNextBtn3){//前往NSOperation多线程
+        NSOperationViewController *vc= [[NSOperationViewController alloc]init];
         vc.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:vc animated:YES completion:nil];
     }
@@ -170,5 +124,88 @@
 }
 -(void)showSender:(id)sender{
     NSLog(@"首页ViewController展示sender==%@",sender);
+}
+-(void)createLabels{
+    //页面标题
+    UILabel *label = [[UILabel alloc]init];
+    [self.view addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.centerY.mas_equalTo(self.view.mas_centerY).offset(-150);
+    }];
+    label.font = [UIFont systemFontOfSize:40.f];
+    [label setText:@"NotificationCenter DefaultCenter简单使用"];
+    //展示label
+    self.LabelForShowResults = [[UILabel alloc]init];
+    [self.view addSubview:self.LabelForShowResults];
+    [self.LabelForShowResults mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.centerY.mas_equalTo(self.view.mas_centerY).offset(-100);
+    }];
+    [self.LabelForShowResults setText:@"暂时无内容"];
+}
+-(void)createNSThreadBtns{
+    //btn1 无参数传递消息btn
+    self.btn1 = [[UIButton alloc]init];
+    self.btn1.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:.7];
+    [self.btn1 setTitle:@"发送一个无参数的通知" forState:UIControlStateNormal];
+    [self.btn1 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btn1];
+    [self.btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-100);
+        make.leading.mas_equalTo(self.view.mas_leading).offset(20);
+    }];
+    //btn2 有参数传递消息btn 使用参数为 Notification.object
+    self.btn2 = [[UIButton alloc]init];
+    self.btn2.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:.7];
+    [self.btn2 setTitle:@"发送一个有Notification.object参数的Notification" forState:UIControlStateNormal];
+    [self.btn2 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btn2];
+    [self.btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.btn1);
+        make.leading.mas_equalTo(self.btn1.mas_trailing).offset(10);
+    }];
+    //btn3 有参数传递消息btn 使用参数为 Notification.userInfo
+    self.btn3 = [[UIButton alloc]init];
+    self.btn3.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:.7];
+    [self.btn3 setTitle:@"发送一个有Notification.userInfo参数的Notification" forState:UIControlStateNormal];
+    [self.btn3 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btn3];
+    [self.btn3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.btn1);
+        make.leading.mas_equalTo(self.btn2.mas_trailing).offset(10);
+    }];
+}
+-(void)createGotoNextBtns{
+    //goNextBtn1去另一个ViewController
+    self.goNextBtn1 = [[UIButton alloc]init];
+    self.goNextBtn1.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
+    [self.goNextBtn1 setTitle:@"前往 NSThread" forState:UIControlStateNormal];
+    [self.goNextBtn1 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.goNextBtn1];
+    [self.goNextBtn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.btn1.mas_bottom).offset(10);
+        make.leading.mas_equalTo(self.btn1.mas_leading);
+    }];
+    //goNextBtn2去另一个ViewController
+    self.goNextBtn2 = [[UIButton alloc]init];
+    self.goNextBtn2.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
+    [self.goNextBtn2 setTitle:@"前往 GCD" forState:UIControlStateNormal];
+    [self.goNextBtn2 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.goNextBtn2];
+    [self.goNextBtn2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.btn1.mas_bottom).offset(10);
+        make.leading.mas_equalTo(self.btn1.mas_trailing).offset(2);
+    }];
+    //goNextBtn3去另一个ViewController
+    self.goNextBtn3 = [[UIButton alloc]init];
+    self.goNextBtn3.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
+    [self.goNextBtn3 setTitle:@"前往 NSOperation" forState:UIControlStateNormal];
+    [self.goNextBtn3 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.goNextBtn3];
+    [self.goNextBtn2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.btn1.mas_bottom).offset(10);
+        make.leading.mas_equalTo(self.btn2.mas_trailing).offset(2);
+    }];
 }
 @end
