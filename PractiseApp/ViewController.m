@@ -87,7 +87,10 @@
     self.goNextBtn1.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
     [self.goNextBtn1 setTitle:@"前往 多线程售票" forState:UIControlStateNormal];
     [self.goNextBtn1 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [self.goNextBtn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.btn1.mas_bottom).offset(10);
+        make.leading.mas_equalTo(self.btn1.mas_leading);
+    }];
     
     
 }
