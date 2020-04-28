@@ -93,8 +93,15 @@
         make.leading.mas_equalTo(self.btn1.mas_leading);
     }];
     
-
+    UIView *mask = [[UIView alloc]initWithFrame:self.view.frame];
+    mask.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:.8];
+    [self.view addSubview:mask];
     
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [NSThread sleepForTimeInterval:1];
+    [self gotoNextVCViaBtn:self.goNextBtn1];
 }
 
 -(void)btnClick:(id)sender{
@@ -153,5 +160,7 @@
      在iOS n(更新的系统版本有待考证)之后，苹果对其做了优化，会在响应者调用dealloc方法的时候执行removeObserver:方法？
      */
 }
-
+-(void)showSender:(id)sender{
+    NSLog(@"首页ViewController展示sender==%@",sender);
+}
 @end
