@@ -86,6 +86,9 @@
     self.goNextBtn1 = [[UIButton alloc]init];
     self.goNextBtn1.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
     [self.goNextBtn1 setTitle:@"前往 多线程售票" forState:UIControlStateNormal];
+    [self.goNextBtn1 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     
 }
 
@@ -106,7 +109,7 @@
         [[NSNotificationCenter defaultCenter]postNotificationName:@"btn3点击" object:nil userInfo:dic3];
     }
 }
--(void)gotoThreadVCViaBtn:(id)sender{
+-(void)gotoNextVCViaBtn:(id)sender{
     if (sender == self.goNextBtn1) {//前往多线程售票
         ThreadViewController *vc = [[ThreadViewController alloc]init];
         vc.modalPresentationStyle = UIModalPresentationFullScreen;
