@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
 @property (nonatomic, strong) UIButton *closeBtn;
-
+-(void)closeSelf;
 @end
 
 NS_ASSUME_NONNULL_END

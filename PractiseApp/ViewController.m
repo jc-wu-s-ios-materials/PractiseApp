@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.closeBtn.hidden = YES;
     //********注册通知********
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getNotificationWithNil)
@@ -131,7 +132,7 @@
     [self.view addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view);
-        make.centerY.mas_equalTo(self.view.mas_centerY).offset(-150);
+        make.centerY.mas_equalTo(self.view.mas_centerY).mas_offset(-150);
     }];
     label.font = [UIFont systemFontOfSize:40.f];
     [label setText:@"NotificationCenter DefaultCenter简单使用"];
@@ -140,7 +141,7 @@
     [self.view addSubview:self.LabelForShowResults];
     [self.LabelForShowResults mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view);
-        make.centerY.mas_equalTo(self.view.mas_centerY).offset(-100);
+        make.centerY.mas_equalTo(self.view.mas_centerY).mas_offset(-100);
     }];
     [self.LabelForShowResults setText:@"暂时无内容"];
 }
@@ -152,8 +153,8 @@
     [self.btn1 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.btn1];
     [self.btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-100);
-        make.leading.mas_equalTo(self.view.mas_leading).offset(20);
+        make.bottom.mas_equalTo(self.view.mas_bottom).mas_offset(-100);
+        make.leading.mas_equalTo(self.view.mas_leading).mas_offset(20);
     }];
     //btn2 有参数传递消息btn 使用参数为 Notification.object
     self.btn2 = [[UIButton alloc]init];
@@ -163,7 +164,7 @@
     [self.view addSubview:self.btn2];
     [self.btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.btn1);
-        make.leading.mas_equalTo(self.btn1.mas_trailing).offset(10);
+        make.leading.mas_equalTo(self.btn1.mas_trailing).mas_offset(10);
     }];
     //btn3 有参数传递消息btn 使用参数为 Notification.userInfo
     self.btn3 = [[UIButton alloc]init];
@@ -173,7 +174,7 @@
     [self.view addSubview:self.btn3];
     [self.btn3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.btn1);
-        make.leading.mas_equalTo(self.btn2.mas_trailing).offset(10);
+        make.leading.mas_equalTo(self.btn2.mas_trailing).mas_offset(10);
     }];
 }
 -(void)createGotoNextBtns{
@@ -184,7 +185,7 @@
     [self.goNextBtn1 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.goNextBtn1];
     [self.goNextBtn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.btn1.mas_bottom).offset(10);
+        make.top.mas_equalTo(self.btn1.mas_bottom).mas_offset(10);
         make.leading.mas_equalTo(self.btn1.mas_leading);
     }];
     //goNextBtn2去另一个ViewController
@@ -194,8 +195,8 @@
     [self.goNextBtn2 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.goNextBtn2];
     [self.goNextBtn2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.btn1.mas_bottom).offset(10);
-        make.leading.mas_equalTo(self.btn1.mas_trailing).offset(2);
+        make.top.mas_equalTo(self.goNextBtn1);
+        make.leading.mas_equalTo(self.goNextBtn1.mas_trailing).mas_offset(2);
     }];
     //goNextBtn3去另一个ViewController
     self.goNextBtn3 = [[UIButton alloc]init];
@@ -203,9 +204,9 @@
     [self.goNextBtn3 setTitle:@"前往 NSOperation" forState:UIControlStateNormal];
     [self.goNextBtn3 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.goNextBtn3];
-    [self.goNextBtn2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.btn1.mas_bottom).offset(10);
-        make.leading.mas_equalTo(self.btn2.mas_trailing).offset(2);
+    [self.goNextBtn3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.goNextBtn1);
+        make.leading.mas_equalTo(self.goNextBtn2.mas_trailing).mas_offset(2);
     }];
 }
 @end
