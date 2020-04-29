@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /*
+     NSOperation面向对象，基于GCD封装，比GCD多一些简单的功能，基于OC语言。线程的生命周期是自动管理的，经常使用。
+     */
+    
 }
 
 @end

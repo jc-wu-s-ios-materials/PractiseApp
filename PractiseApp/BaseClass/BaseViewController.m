@@ -31,5 +31,7 @@
         make.trailing.mas_equalTo(self.view.mas_trailing).offset(-20);
     }];
 }
-
+-(void)closeSelf{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

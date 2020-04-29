@@ -122,9 +122,6 @@
     });
 }
 
--(void)closeSelf{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 /*
 #pragma mark - Navigation
 

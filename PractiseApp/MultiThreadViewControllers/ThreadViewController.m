@@ -78,9 +78,6 @@
     
 }
 
--(void)closeSelf{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 -(void)showSender:(id)sender{
     NSLog(@"ThreadViewController展示sender==%@",sender);
 }
