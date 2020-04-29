@@ -10,7 +10,7 @@
 		4B787A0E45FE413D51FD0469 /* libPods-PractiseApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77784D0E82F16B4E44BADB50 /* libPods-PractiseApp.a */; };
 		6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C712456B93E000AFCEA /* AppDelegate.m */; };
 		6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C742456B93E000AFCEA /* SceneDelegate.m */; };
-		6D671C782456B93E000AFCEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C772456B93E000AFCEA /* ViewController.m */; };
+		6D671C782456B93E000AFCEA /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C772456B93E000AFCEA /* HomePageViewController.m */; };
 		6D671C7B2456B93E000AFCEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D671C792456B93E000AFCEA /* Main.storyboard */; };
 		6D671C7E2456B93E000AFCEA /* PractiseApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C7C2456B93E000AFCEA /* PractiseApp.xcdatamodeld */; };
 		6D671C802456B940000AFCEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D671C7F2456B940000AFCEA /* Assets.xcassets */; };
@@ -27,6 +27,7 @@
 		6D671CB0245801C5000AFCEA /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CAF245801C5000AFCEA /* GCDViewController.m */; };
 		6D671CB324583CEA000AFCEA /* NSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CB224583CEA000AFCEA /* NSOperationViewController.m */; };
 		6D671CB6245941B9000AFCEA /* SellTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CB5245941B9000AFCEA /* SellTicketsViewController.m */; };
+		6D671CBB24596646000AFCEA /* WelcomeToSandBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CBA24596646000AFCEA /* WelcomeToSandBoxViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +37,8 @@
 		6D671C712456B93E000AFCEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6D671C732456B93E000AFCEA /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		6D671C742456B93E000AFCEA /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		6D671C762456B93E000AFCEA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6D671C772456B93E000AFCEA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6D671C762456B93E000AFCEA /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		6D671C772456B93E000AFCEA /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		6D671C7A2456B93E000AFCEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D671C7D2456B93E000AFCEA /* PractiseApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PractiseApp.xcdatamodel; sourceTree = "<group>"; };
 		6D671C7F2456B940000AFCEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +62,8 @@
 		6D671CB224583CEA000AFCEA /* NSOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationViewController.m; sourceTree = "<group>"; };
 		6D671CB4245941B9000AFCEA /* SellTicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellTicketsViewController.h; sourceTree = "<group>"; };
 		6D671CB5245941B9000AFCEA /* SellTicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellTicketsViewController.m; sourceTree = "<group>"; };
+		6D671CB924596646000AFCEA /* WelcomeToSandBoxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeToSandBoxViewController.h; sourceTree = "<group>"; };
+		6D671CBA24596646000AFCEA /* WelcomeToSandBoxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeToSandBoxViewController.m; sourceTree = "<group>"; };
 		77784D0E82F16B4E44BADB50 /* libPods-PractiseApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PractiseApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE93AD753810419B6038C41 /* Pods-PractiseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PractiseApp.debug.xcconfig"; path = "Target Support Files/Pods-PractiseApp/Pods-PractiseApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,14 +120,15 @@
 				6D671C712456B93E000AFCEA /* AppDelegate.m */,
 				6D671C732456B93E000AFCEA /* SceneDelegate.h */,
 				6D671C742456B93E000AFCEA /* SceneDelegate.m */,
-				6D671C762456B93E000AFCEA /* ViewController.h */,
-				6D671C772456B93E000AFCEA /* ViewController.m */,
+				6D671C762456B93E000AFCEA /* HomePageViewController.h */,
+				6D671C772456B93E000AFCEA /* HomePageViewController.m */,
 				6D671C792456B93E000AFCEA /* Main.storyboard */,
 				6D671C7F2456B940000AFCEA /* Assets.xcassets */,
 				6D671C812456B940000AFCEA /* LaunchScreen.storyboard */,
 				6D671C842456B940000AFCEA /* Info.plist */,
 				6D671C852456B940000AFCEA /* main.m */,
 				6D671C7C2456B93E000AFCEA /* PractiseApp.xcdatamodeld */,
+				6D671CB8245964D7000AFCEA /* SandBox */,
 				6D671CA72457C68C000AFCEA /* MultiThreadViewControllers */,
 				6D671CA02456BCF0000AFCEA /* BaseClass */,
 			);
@@ -153,6 +157,15 @@
 				6D671CB5245941B9000AFCEA /* SellTicketsViewController.m */,
 			);
 			path = MultiThreadViewControllers;
+			sourceTree = "<group>";
+		};
+		6D671CB8245964D7000AFCEA /* SandBox */ = {
+			isa = PBXGroup;
+			children = (
+				6D671CB924596646000AFCEA /* WelcomeToSandBoxViewController.h */,
+				6D671CBA24596646000AFCEA /* WelcomeToSandBoxViewController.m */,
+			);
+			path = SandBox;
 			sourceTree = "<group>";
 		};
 		D7C613D515C3606789B4E2F5 /* Frameworks */ = {
@@ -307,7 +320,8 @@
 				6D671C7E2456B93E000AFCEA /* PractiseApp.xcdatamodeld in Sources */,
 				6D671CB0245801C5000AFCEA /* GCDViewController.m in Sources */,
 				6D671CB6245941B9000AFCEA /* SellTicketsViewController.m in Sources */,
-				6D671C782456B93E000AFCEA /* ViewController.m in Sources */,
+				6D671C782456B93E000AFCEA /* HomePageViewController.m in Sources */,
+				6D671CBB24596646000AFCEA /* WelcomeToSandBoxViewController.m in Sources */,
 				6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */,
 				6D671CA32456BD52000AFCEA /* BaseViewController.m in Sources */,
 				6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */,
