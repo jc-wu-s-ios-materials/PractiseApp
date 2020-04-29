@@ -28,6 +28,7 @@
 		6D671CB324583CEA000AFCEA /* NSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CB224583CEA000AFCEA /* NSOperationViewController.m */; };
 		6D671CB6245941B9000AFCEA /* SellTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CB5245941B9000AFCEA /* SellTicketsViewController.m */; };
 		6D671CBB24596646000AFCEA /* WelcomeToSandBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671CBA24596646000AFCEA /* WelcomeToSandBoxViewController.m */; };
+		6D671CBD24599437000AFCEA /* libYYKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D671CBC24599437000AFCEA /* libYYKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		6D671CB5245941B9000AFCEA /* SellTicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellTicketsViewController.m; sourceTree = "<group>"; };
 		6D671CB924596646000AFCEA /* WelcomeToSandBoxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeToSandBoxViewController.h; sourceTree = "<group>"; };
 		6D671CBA24596646000AFCEA /* WelcomeToSandBoxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeToSandBoxViewController.m; sourceTree = "<group>"; };
+		6D671CBC24599437000AFCEA /* libYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYYKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		77784D0E82F16B4E44BADB50 /* libPods-PractiseApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PractiseApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE93AD753810419B6038C41 /* Pods-PractiseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PractiseApp.debug.xcconfig"; path = "Target Support Files/Pods-PractiseApp/Pods-PractiseApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 			files = (
 				6D671C922456BAF5000AFCEA /* libIQKeyboardManager.a in Frameworks */,
 				6D671C962456BB06000AFCEA /* libPods-PractiseApp.a in Frameworks */,
+				6D671CBD24599437000AFCEA /* libYYKit.a in Frameworks */,
 				6D671C9A2456BB0D000AFCEA /* libZYCornerRadius.a in Frameworks */,
 				4B787A0E45FE413D51FD0469 /* libPods-PractiseApp.a in Frameworks */,
 				6D671C8D2456BAD5000AFCEA /* libDoraemonKit.a in Frameworks */,
@@ -171,6 +174,7 @@
 		D7C613D515C3606789B4E2F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D671CBC24599437000AFCEA /* libYYKit.a */,
 				6D671C992456BB0D000AFCEA /* libZYCornerRadius.a */,
 				6D671C972456BB0A000AFCEA /* libSocketRocket.a */,
 				6D671C952456BB06000AFCEA /* libPods-PractiseApp.a */,

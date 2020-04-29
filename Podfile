@@ -6,6 +6,7 @@ target 'PractiseApp' do
   # use_frameworks!
 
   # Pods for PractiseApp
+pod 'YYKit'
 pod 'Masonry'
 pod 'ZYCornerRadius', '~> 1.0.2'
 pod 'SocketRocket'
