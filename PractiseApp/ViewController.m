@@ -10,6 +10,7 @@
 #import "ThreadViewController.h"
 #import "GCDViewController.h"
 #import "NSOperationViewController.h"
+#import "SellTicketsViewController.h"
 @interface ViewController ()
 @property (nonatomic, strong) UILabel *LabelForShowResults;
 //btn1 - btn3 练习 NotificationCenter DefaultCenter
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) UIButton *goNextBtn1;//NSThread多线程练习
 @property (nonatomic, strong) UIButton *goNextBtn2;//GCD多线程练习
 @property (nonatomic, strong) UIButton *goNextBtn3;//NSOperation练习
+@property (nonatomic, strong) UIButton *goNextBtn4;//售票解决方案
 
 
 
@@ -56,7 +58,8 @@
     
 //    [self gotoNextVCViaBtn:self.goNextBtn1];//自动进入NSThread练习
 //    [self gotoNextVCViaBtn:self.goNextBtn2];//自动进入GCD练习
-    [self gotoNextVCViaBtn:self.goNextBtn3];//自动进入NSOperation练习
+//    [self gotoNextVCViaBtn:self.goNextBtn3];//自动进入NSOperation练习
+    [self gotoNextVCViaBtn:self.goNextBtn4];//自动进去“售票问题解决”练习
 }
 
 -(void)btnClick:(id)sender{
@@ -87,6 +90,10 @@
         [self presentViewController:vc animated:YES completion:nil];
     }else if (sender == self.goNextBtn3){//前往NSOperation多线程
         NSOperationViewController *vc= [[NSOperationViewController alloc]init];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    }else if (sender == self.goNextBtn4){//前往售票问题解决
+        SellTicketsViewController *vc= [[SellTicketsViewController alloc]init];
         vc.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:vc animated:YES completion:nil];
     }
@@ -207,6 +214,16 @@
     [self.goNextBtn3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.goNextBtn1);
         make.leading.mas_equalTo(self.goNextBtn2.mas_trailing).mas_offset(2);
+    }];
+    //goNextBtn4去另一个ViewControllern
+    self.goNextBtn4 = [[UIButton alloc]init];
+    self.goNextBtn4.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
+    [self.goNextBtn4 setTitle:@"前往 NSOperation" forState:UIControlStateNormal];
+    [self.goNextBtn4 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.goNextBtn4];
+    [self.goNextBtn4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.goNextBtn1);
+        make.leading.mas_equalTo(self.goNextBtn3.mas_trailing).mas_offset(2);
     }];
 }
 @end
