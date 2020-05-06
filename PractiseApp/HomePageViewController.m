@@ -29,6 +29,8 @@
 @property (nonatomic, strong) UIButton *lockBtn1;//NSLock锁展示
 @property (nonatomic, strong) UIButton *lockBtn2;//Synchronized锁
 @property (nonatomic, strong) UIButton *lockBtn3;//Semaphore信号量
+@property (nonatomic, strong) UIButton *lockBtn4;//NSCondition条件锁
+
 
 
 
@@ -74,7 +76,8 @@
 //    [self gotoNextVCViaBtn:self.goNextBtn5];//自动前往沙盒欢迎页
 //    [self gotoNextVCViaBtn:self.lockBtn1];//自动前往NSLock页
 //    [self gotoNextVCViaBtn:self.lockBtn2];//自动前往synchronize页
-    [self gotoNextVCViaBtn:self.lockBtn3];//自动前往semaphore页
+//    [self gotoNextVCViaBtn:self.lockBtn3];//自动前往semaphore页
+    [self gotoNextVCViaBtn:self.lockBtn4];//自动前往NSCondition页
 }
 
 
@@ -161,6 +164,10 @@
         [self presentViewController:vc animated:YES completion:nil];
     }else if (sender == self.lockBtn3){//前往semaphore信号量
         SemaphoreVC *vc = [[SemaphoreVC alloc]init];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    }else if (sender == self.lockBtn4){//前往NSCondition条件锁
+        NSConditionVC *vc = [[NSConditionVC alloc]init];
         vc.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:vc animated:YES completion:nil];
     }
@@ -294,7 +301,7 @@
     //Semaphore信号量
     self.lockBtn3 = [[UIButton alloc]init];
     self.lockBtn3.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
-    [self.lockBtn3 setTitle:@"前往 syschroniz" forState:UIControlStateNormal];
+    [self.lockBtn3 setTitle:@"前往 Semaphore" forState:UIControlStateNormal];
     [self.lockBtn3 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.lockBtn3];
     [self.lockBtn3 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -302,5 +309,15 @@
         make.leading.mas_equalTo(self.lockBtn2.mas_trailing).offset(2);
     }];
     
+    //NSCondition条件锁
+    self.lockBtn4 = [[UIButton alloc]init];
+    self.lockBtn4.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
+    [self.lockBtn4 setTitle:@"前往 NSCondition" forState:UIControlStateNormal];
+    [self.lockBtn4 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.lockBtn4];
+    [self.lockBtn4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.lockBtn1);
+        make.leading.mas_equalTo(self.lockBtn3.mas_trailing).offset(2);
+    }];
 }
 @end
