@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"当前打开NSLockVC");
     self.mything = [[SomeThing alloc]init];
     
     
@@ -28,17 +29,19 @@
         for (int x =0; x<10; x++) {
             self.mything.number += 1;
             NSLog(@"线程1-运行%d-%ld",x,self.mything.number);
-//            [NSThread sleepForTimeInterval:.4];
+            [NSThread sleepForTimeInterval:.4];
         }
         [self.mything.lock unlock];
     }];
     
     [NSThread detachNewThreadWithBlock:^{
+        [self.mything.lock lock];
         for (int y = 0; y <10; y++) {
             self.mything.number += 1;
             NSLog(@"线程2-运行%d-%ld",y,self.mything.number);
             [NSThread sleepForTimeInterval:.4];
         }
+        [self.mything.lock unlock];
     }];
     
 }

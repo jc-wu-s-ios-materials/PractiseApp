@@ -70,8 +70,8 @@
 //    [self gotoNextVCViaBtn:self.goNextBtn3];//自动进入NSOperation练习
 //    [self gotoNextVCViaBtn:self.goNextBtn4];//自动进去“售票问题解决”练习
 //    [self gotoNextVCViaBtn:self.goNextBtn5];//自动前往沙盒欢迎页
-//    [self gotoNextVCViaBtn:self.lockBtn1];//自动前往NSLock页
-    [self gotoNextVCViaBtn:self.lockBtn2];//自动前往synchronize页
+    [self gotoNextVCViaBtn:self.lockBtn1];//自动前往NSLock页
+//    [self gotoNextVCViaBtn:self.lockBtn2];//自动前往synchronize页
 }
 
 
