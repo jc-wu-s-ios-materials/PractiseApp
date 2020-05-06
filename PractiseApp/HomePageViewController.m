@@ -12,18 +12,22 @@
 #import "NSOperationViewController.h"
 #import "SellTicketsViewController.h"
 #import "WelcomeToSandBoxViewController.h"
+#import "AllMyLockVC.h"
 @interface HomePageViewController ()
 @property (nonatomic, strong) UILabel *LabelForShowResults;
 //btn1 - btn3 练习 NotificationCenter DefaultCenter
 @property (nonatomic, strong) UIButton *btn1;
 @property (nonatomic, strong) UIButton *btn2;
 @property (nonatomic, strong) UIButton *btn3;
-//前往其他UIViewController
+//前往其他UIViewController 多线程
 @property (nonatomic, strong) UIButton *goNextBtn1;//NSThread多线程练习
 @property (nonatomic, strong) UIButton *goNextBtn2;//GCD多线程练习
 @property (nonatomic, strong) UIButton *goNextBtn3;//NSOperation练习
 @property (nonatomic, strong) UIButton *goNextBtn4;//售票解决方案
 @property (nonatomic, strong) UIButton *goNextBtn5;//前往沙盒欢迎页
+//前往锁VC们，各种锁
+@property (nonatomic, strong) UIButton *lockBtn1;//NSLock锁展示
+
 
 
 
@@ -34,7 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.closeBtn.hidden = YES;
-    //********注册通知********
+    //********注册通知********⬇️
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getNotificationWithNil)
                                                 name:@"btn1点击" object:nil];
@@ -43,11 +47,13 @@
                                                 name:@"btn2点击" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getNotificationWithNonnullUserInfo:)
                                                 name:@"btn3点击" object:nil];
-    //********注册通知********
+    //********注册通知********⬆️
     
+    //创建首页的各种btn
     [self createLabels];
     [self createNSThreadBtns];
     [self createGotoNextBtns];
+    [self createLockBtns];
     
     UIView *mask = [[UIView alloc]initWithFrame:self.view.frame];
     mask.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:.8];
@@ -62,7 +68,8 @@
 //    [self gotoNextVCViaBtn:self.goNextBtn2];//自动进入GCD练习
 //    [self gotoNextVCViaBtn:self.goNextBtn3];//自动进入NSOperation练习
 //    [self gotoNextVCViaBtn:self.goNextBtn4];//自动进去“售票问题解决”练习
-    [self gotoNextVCViaBtn:self.goNextBtn5];//自动前往沙盒欢迎页
+//    [self gotoNextVCViaBtn:self.goNextBtn5];//自动前往沙盒欢迎页
+    [self gotoNextVCViaBtn:self.lockBtn1];//自动前往NSLock页
 }
 
 
@@ -137,6 +144,10 @@
         [self presentViewController:vc animated:YES completion:nil];
     }else if (sender == self.goNextBtn5){//前往沙盒欢迎页
         WelcomeToSandBoxViewController *vc = [[WelcomeToSandBoxViewController alloc]init];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    }else if (sender == self.lockBtn1){//前往NSLock锁
+        NSLockVC *vc = [[NSLockVC alloc]init];
         vc.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:vc animated:YES completion:nil];
     }
@@ -243,5 +254,18 @@
         make.top.mas_equalTo(self.goNextBtn1);
         make.leading.mas_equalTo(self.goNextBtn4.mas_trailing).mas_offset(2);
     }];
+}
+-(void)createLockBtns{
+    //NSLock锁
+    self.lockBtn1 = [[UIButton alloc]init];
+    self.lockBtn1.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
+    [self.lockBtn1 setTitle:@"前往 NSLock" forState:UIControlStateNormal];
+    [self.lockBtn1 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.lockBtn1];
+    [self.lockBtn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.btn1.mas_top).mas_offset(-20);
+        make.leading.mas_equalTo(self.btn1.mas_leading);
+    }];
+    
 }
 @end
