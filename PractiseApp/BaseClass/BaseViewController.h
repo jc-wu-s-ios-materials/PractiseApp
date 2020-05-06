@@ -10,6 +10,12 @@
 #import <Masonry.h>
 #import "UIImageView+CornerRadius.h"
 
+//_HERE 宏
+#define _HERE ({ \
+    NSString *file = [[NSString stringWithUTF8String:__FILE__] lastPathComponent]; \
+    [NSString stringWithFormat:@"%s (%@:%d)", __PRETTY_FUNCTION__, file, __LINE__]; \
+})
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController

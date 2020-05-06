@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"当前打开NSLockVC");
+    NSLog(@"%@",_HERE);
     self.mything = [[SomeThing alloc]init];
     
     
