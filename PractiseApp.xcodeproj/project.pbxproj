@@ -60,6 +60,7 @@
 		6D1A0ECC2462575000682871 /* OSSpinLockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSSpinLockVC.m; sourceTree = "<group>"; };
 		6D1A0ECE2462578C00682871 /* BarrierVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarrierVC.h; sourceTree = "<group>"; };
 		6D1A0ECF2462578C00682871 /* BarrierVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarrierVC.m; sourceTree = "<group>"; };
+		6D1A0ED124625B6500682871 /* AllMyLockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllMyLockVC.h; sourceTree = "<group>"; };
 		6D671C6D2456B93E000AFCEA /* PractiseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PractiseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C702456B93E000AFCEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D671C712456B93E000AFCEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 		6D1A0EAB2462541700682871 /* Lock */ = {
 			isa = PBXGroup;
 			children = (
+				6D1A0ED124625B6500682871 /* AllMyLockVC.h */,
 				6D1A0EB52462556800682871 /* NSLockVC.h */,
 				6D1A0EB62462556800682871 /* NSLockVC.m */,
 				6D1A0EB9246255A600682871 /* SynchronizedVC.h */,
