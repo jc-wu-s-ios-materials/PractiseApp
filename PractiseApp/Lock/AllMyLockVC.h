@@ -13,6 +13,7 @@
 #import "SynchronizedVC.h"
 #import "SemaphoreVC.h"
 #import "NSConditionVC.h"
+#import "NSConditionLockVC.h"
 #import "NSRecursiveLockVC.h"
 #import "NSDistributedLockVC.h"
 #import "POSIX_VC.h"

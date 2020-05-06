@@ -18,6 +18,7 @@
 		6D1A0ECD2462575000682871 /* OSSpinLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0ECC2462575000682871 /* OSSpinLockVC.m */; };
 		6D1A0ED02462578C00682871 /* BarrierVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0ECF2462578C00682871 /* BarrierVC.m */; };
 		6D1A0ED62462672800682871 /* SomeThing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0ED52462672800682871 /* SomeThing.m */; };
+		6D1A0ED92462C15200682871 /* NSConditionLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0ED82462C15200682871 /* NSConditionLockVC.m */; };
 		6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C712456B93E000AFCEA /* AppDelegate.m */; };
 		6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C742456B93E000AFCEA /* SceneDelegate.m */; };
 		6D671C782456B93E000AFCEA /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C772456B93E000AFCEA /* HomePageViewController.m */; };
@@ -64,6 +65,8 @@
 		6D1A0ED124625B6500682871 /* AllMyLockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllMyLockVC.h; sourceTree = "<group>"; };
 		6D1A0ED42462672800682871 /* SomeThing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeThing.h; sourceTree = "<group>"; };
 		6D1A0ED52462672800682871 /* SomeThing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SomeThing.m; sourceTree = "<group>"; };
+		6D1A0ED72462C15200682871 /* NSConditionLockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSConditionLockVC.h; sourceTree = "<group>"; };
+		6D1A0ED82462C15200682871 /* NSConditionLockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSConditionLockVC.m; sourceTree = "<group>"; };
 		6D671C6D2456B93E000AFCEA /* PractiseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PractiseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C702456B93E000AFCEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D671C712456B93E000AFCEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				6D1A0EBD246255EC00682871 /* SemaphoreVC.m */,
 				6D1A0EBF2462563700682871 /* NSConditionVC.h */,
 				6D1A0EC02462563700682871 /* NSConditionVC.m */,
+				6D1A0ED72462C15200682871 /* NSConditionLockVC.h */,
+				6D1A0ED82462C15200682871 /* NSConditionLockVC.m */,
 				6D1A0EC22462567500682871 /* NSRecursiveLockVC.h */,
 				6D1A0EC32462567500682871 /* NSRecursiveLockVC.m */,
 				6D1A0EC52462569700682871 /* NSDistributedLockVC.h */,
@@ -381,6 +386,7 @@
 			files = (
 				6D671CAA2457C6B8000AFCEA /* ThreadViewController.m in Sources */,
 				6D671C862456B940000AFCEA /* main.m in Sources */,
+				6D1A0ED92462C15200682871 /* NSConditionLockVC.m in Sources */,
 				6D1A0ED02462578C00682871 /* BarrierVC.m in Sources */,
 				6D1A0EC12462563700682871 /* NSConditionVC.m in Sources */,
 				6D1A0EBB246255A600682871 /* SynchronizedVC.m in Sources */,
