@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%@",_HERE);
     //初始化获取路径
     [self findMyPaths];
 //    [self showMyPaths]; //验证是否获得路径
@@ -30,14 +31,16 @@
 //    id content = @"江南皮革厂倒闭了！";//写入的内容为 NSString
 //    id content = @[@"c",@"c++",@"c#",@"oc",@"swift"]; //写入的内容为NSArray
 //    id content = @{@"职业":@"coder",@"性别":@"男"};//写入内容为NSDictionary
-    id content = [self getMyNSData];//写入内容为NSData
+//    id content = [self getMyNSData];//写入内容为NSData
+    id content = [self getMyDictionaryFromExampleWebAPI];
     
     NSBlockOperation *writhStrOP = [NSBlockOperation blockOperationWithBlock:^{
         [self safelyWriteMyContent:content InMyFileNamed:filename InDir:self.docPath];
     }];
     NSBlockOperation *readStrOP = [NSBlockOperation blockOperationWithBlock:^{
-//        [self readMyStringInDocDicFileNamed:filename];
-        [self readMyNSdataFileNamed:filename InDir:self.docPath];
+//        [self readMyStringFromFileNamed:filename InDir:self.docPath];
+//        [self readMyNSdataFromFileNamed:filename InDir:self.docPath];
+        [self readMyNSDictionaryFromFileNamed:filename InDir:self.docPath];
     }];
     [readStrOP addDependency:writhStrOP];//加dependency确保先写后读(在不使用队列&&逆序start的情况下不能保证)
     NSOperationQueue *queue = [[NSOperationQueue alloc]init];
@@ -77,16 +80,22 @@
 }
 #pragma mark - 读取数据⬇️
 //读取String
--(void)readMyStringFileNamed:(NSString*)filename InDir:(NSString*)dir{
+-(void)readMyStringFromFileNamed:(NSString*)filename InDir:(NSString*)dir{
     NSString *filePath = [dir stringByAppendingPathComponent:filename];
     NSString *resultStr = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     NSLog(@"%@的内容为:%@",filename,resultStr);
 }
 //读取NSData
--(void)readMyNSdataFileNamed:(NSString*)filename InDir:(NSString*)dir{
+-(void)readMyNSdataFromFileNamed:(NSString*)filename InDir:(NSString*)dir{
     NSString *filePath = [dir stringByAppendingPathComponent:filename];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSLog(@"%@的内容为:%@",filename,data);
+}
+//读取NSDictionary
+-(void)readMyNSDictionaryFromFileNamed:(NSString*)filename InDir:(NSString*)dir{
+    NSString *filePath = [dir stringByAppendingPathComponent:filename];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+    NSLog(@"%@的内容为:%@",filename,dict);
 }
 //.....还有其他的类型
 
@@ -108,10 +117,26 @@
     NSArray *array = [string componentsSeparatedByString:@","];
     return array;
 }
--(NSDictionary*)geMyDictionaryFromJsonString:( NSString*)jsonStr{
+-(NSDictionary*)getMyDictionaryFromExampleWebAPI{
+    NSURL *url = [NSURL URLWithString:@"http://t.weather.sojson.com/api/weather/city/101030100"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    __block NSDictionary *dict ;
+    NSURLSessionTask *task = [[NSURLSession sharedSession]dataTaskWithRequest:request
+                                                            completionHandler:^(NSData * _Nullable data,
+                                                                NSURLResponse * _Nullable response,
+                                                                    NSError * _Nullable error) {
+        dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+//        dispatch_semaphore_signal(semaphore);
+    }];
+    [task resume];
+//    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    return dict;
+}
+-(NSDictionary*)getMyDictionaryFromJsonString:( NSString*)jsonStr{
     NSDictionary *dic = nil;
     if (jsonStr){
-        NSDate * _Nullable jsData = [jsonStr dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+        NSData * _Nullable jsData = [jsonStr dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
         NSError *error;
         dic = [NSJSONSerialization JSONObjectWithData:jsData options:NSJSONReadingMutableContainers error:&error];
         if (error) {
