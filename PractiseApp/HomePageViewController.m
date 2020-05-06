@@ -28,6 +28,8 @@
 //前往锁VC们，各种锁
 @property (nonatomic, strong) UIButton *lockBtn1;//NSLock锁展示
 @property (nonatomic, strong) UIButton *lockBtn2;//Synchronized锁
+@property (nonatomic, strong) UIButton *lockBtn3;//Semaphore信号量
+
 
 
 
@@ -70,8 +72,9 @@
 //    [self gotoNextVCViaBtn:self.goNextBtn3];//自动进入NSOperation练习
 //    [self gotoNextVCViaBtn:self.goNextBtn4];//自动进去“售票问题解决”练习
 //    [self gotoNextVCViaBtn:self.goNextBtn5];//自动前往沙盒欢迎页
-    [self gotoNextVCViaBtn:self.lockBtn1];//自动前往NSLock页
+//    [self gotoNextVCViaBtn:self.lockBtn1];//自动前往NSLock页
 //    [self gotoNextVCViaBtn:self.lockBtn2];//自动前往synchronize页
+    [self gotoNextVCViaBtn:self.lockBtn3];//自动前往semaphore页
 }
 
 
@@ -154,6 +157,10 @@
         [self presentViewController:vc animated:YES completion:nil];
     }else if (sender == self.lockBtn2){//前往synchroni锁
         SynchronizedVC *vc = [[SynchronizedVC alloc]init];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    }else if (sender == self.lockBtn3){//前往semaphore信号量
+        SemaphoreVC *vc = [[SemaphoreVC alloc]init];
         vc.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:vc animated:YES completion:nil];
     }
@@ -282,6 +289,17 @@
     [self.lockBtn2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.lockBtn1);
         make.leading.mas_equalTo(self.lockBtn1.mas_trailing).offset(2);
+    }];
+    
+    //Semaphore信号量
+    self.lockBtn3 = [[UIButton alloc]init];
+    self.lockBtn3.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
+    [self.lockBtn3 setTitle:@"前往 syschroniz" forState:UIControlStateNormal];
+    [self.lockBtn3 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.lockBtn3];
+    [self.lockBtn3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.lockBtn1);
+        make.leading.mas_equalTo(self.lockBtn2.mas_trailing).offset(2);
     }];
     
 }
