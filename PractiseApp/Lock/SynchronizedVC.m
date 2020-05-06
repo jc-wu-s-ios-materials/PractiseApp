@@ -8,8 +8,11 @@
 //
 
 #import "SynchronizedVC.h"
+#import "SomeThing.h"
 
 @interface SynchronizedVC ()
+@property (nonatomic, strong) SomeThing *mything;
+
 
 @end
 
@@ -17,17 +20,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.mything = [[SomeThing alloc]init];
+    
+    [NSThread detachNewThreadWithBlock:^{
+        for (int x =0; x<10; x++) {
+            self.mything.number += 1;
+            NSLog(@"线程1-运行%d-%ld",x,self.mything.number);
+            [NSThread sleepForTimeInterval:.4];
+        }
+    }];
+    [NSThread detachNewThreadWithBlock:^{
+        @synchronized (self.mything) {
+            for (int y = 0; y <10; y++) {
+                @synchronized (self.mything) {
+                    self.mything.number += 1;
+                    NSLog(@"线程2-运行%d-%ld",y,self.mything.number);
+                    [NSThread sleepForTimeInterval:.4];
+                }
+            }
+        }
+    }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

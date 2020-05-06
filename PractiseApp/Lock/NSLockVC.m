@@ -9,10 +9,7 @@
 //
 
 #import "NSLockVC.h"
-@interface SomeThing : NSObject
-@property (nonatomic) NSInteger number;
-@property (nonatomic, strong) NSLock *lock;
-@end
+#import "SomeThing.h"
 
 @interface NSLockVC ()
 @property (nonatomic, strong) SomeThing *mything;
@@ -57,14 +54,3 @@
 
 @end
 
-@implementation SomeThing
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.number = 0;
-        self.lock = [[NSLock alloc]init];
-    }
-    return self;
-}
-@end

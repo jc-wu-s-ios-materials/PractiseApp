@@ -27,6 +27,7 @@
 @property (nonatomic, strong) UIButton *goNextBtn5;//前往沙盒欢迎页
 //前往锁VC们，各种锁
 @property (nonatomic, strong) UIButton *lockBtn1;//NSLock锁展示
+@property (nonatomic, strong) UIButton *lockBtn2;//Synchronized锁
 
 
 
@@ -69,7 +70,8 @@
 //    [self gotoNextVCViaBtn:self.goNextBtn3];//自动进入NSOperation练习
 //    [self gotoNextVCViaBtn:self.goNextBtn4];//自动进去“售票问题解决”练习
 //    [self gotoNextVCViaBtn:self.goNextBtn5];//自动前往沙盒欢迎页
-    [self gotoNextVCViaBtn:self.lockBtn1];//自动前往NSLock页
+//    [self gotoNextVCViaBtn:self.lockBtn1];//自动前往NSLock页
+    [self gotoNextVCViaBtn:self.lockBtn2];//自动前往synchronize页
 }
 
 
@@ -148,6 +150,10 @@
         [self presentViewController:vc animated:YES completion:nil];
     }else if (sender == self.lockBtn1){//前往NSLock锁
         NSLockVC *vc = [[NSLockVC alloc]init];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    }else if (sender == self.lockBtn2){//前往synchroni锁
+        SynchronizedVC *vc = [[SynchronizedVC alloc]init];
         vc.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:vc animated:YES completion:nil];
     }
@@ -265,6 +271,17 @@
     [self.lockBtn1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.btn1.mas_top).mas_offset(-20);
         make.leading.mas_equalTo(self.btn1.mas_leading);
+    }];
+    
+    //synchronize锁
+    self.lockBtn2 = [[UIButton alloc]init];
+    self.lockBtn2.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
+    [self.lockBtn2 setTitle:@"前往 syschroniz" forState:UIControlStateNormal];
+    [self.lockBtn2 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.lockBtn2];
+    [self.lockBtn2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.lockBtn1);
+        make.leading.mas_equalTo(self.lockBtn1.mas_trailing).offset(2);
     }];
     
 }

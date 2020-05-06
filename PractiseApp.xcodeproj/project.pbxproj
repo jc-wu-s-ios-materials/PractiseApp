@@ -17,6 +17,7 @@
 		6D1A0ECA246256BF00682871 /* POSIX_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EC9246256BF00682871 /* POSIX_VC.m */; };
 		6D1A0ECD2462575000682871 /* OSSpinLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0ECC2462575000682871 /* OSSpinLockVC.m */; };
 		6D1A0ED02462578C00682871 /* BarrierVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0ECF2462578C00682871 /* BarrierVC.m */; };
+		6D1A0ED62462672800682871 /* SomeThing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0ED52462672800682871 /* SomeThing.m */; };
 		6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C712456B93E000AFCEA /* AppDelegate.m */; };
 		6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C742456B93E000AFCEA /* SceneDelegate.m */; };
 		6D671C782456B93E000AFCEA /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C772456B93E000AFCEA /* HomePageViewController.m */; };
@@ -61,6 +62,8 @@
 		6D1A0ECE2462578C00682871 /* BarrierVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarrierVC.h; sourceTree = "<group>"; };
 		6D1A0ECF2462578C00682871 /* BarrierVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarrierVC.m; sourceTree = "<group>"; };
 		6D1A0ED124625B6500682871 /* AllMyLockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllMyLockVC.h; sourceTree = "<group>"; };
+		6D1A0ED42462672800682871 /* SomeThing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeThing.h; sourceTree = "<group>"; };
+		6D1A0ED52462672800682871 /* SomeThing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SomeThing.m; sourceTree = "<group>"; };
 		6D671C6D2456B93E000AFCEA /* PractiseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PractiseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C702456B93E000AFCEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D671C712456B93E000AFCEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				6D1A0ECC2462575000682871 /* OSSpinLockVC.m */,
 				6D1A0ECE2462578C00682871 /* BarrierVC.h */,
 				6D1A0ECF2462578C00682871 /* BarrierVC.m */,
+				6D1A0ED42462672800682871 /* SomeThing.h */,
+				6D1A0ED52462672800682871 /* SomeThing.m */,
 			);
 			path = Lock;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */,
 				6D1A0ECD2462575000682871 /* OSSpinLockVC.m in Sources */,
 				6D671CB324583CEA000AFCEA /* NSOperationViewController.m in Sources */,
+				6D1A0ED62462672800682871 /* SomeThing.m in Sources */,
 				6D1A0EC72462569700682871 /* NSDistributedLockVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
