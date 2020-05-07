@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger,PersonStatus) {
     @private
     NSString* name;
 }
-@property (nonatomic,assign) NSInteger PersonStatus;
+@property (nonatomic,assign) PersonStatus status;
 
 -(void)firstTimeChangeName;
 -(void)secondTimeChangeName;

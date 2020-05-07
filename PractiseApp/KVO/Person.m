@@ -14,7 +14,7 @@
 -(instancetype)init{
     self = [super init];
     if (self) {
-        self.PersonStatus = PersonStatusUnknown;
+        self.status = PersonStatusUnknown;
         self->name = @"还没名字";
     }
     return self;

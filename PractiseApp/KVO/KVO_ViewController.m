@@ -38,15 +38,15 @@
     //此处官方文档建议撤销observer时调用-removeObserver:fromObjectsAtIndexes:forKeyPath:context:
     
     //KVO注册观察者，既可以观察公有属性，也可以观察私有属性
-    [self.baby addObserver:self forKeyPath:@"PersonStatus" options:option context:@"监控baby饥饿状态"];//context类型是 void*
+    [self.baby addObserver:self forKeyPath:@"status" options:option context:@"监控baby饥饿状态"];//context类型是 void*
     [self.baby addObserver:self forKeyPath:@"name" options:option context:@"监控baby名字"];//观察私有属性
     //仅仅给baby注册了观察者，没有给adult注册
     
     //模拟一下变饿了
     [NSThread detachNewThreadWithBlock:^{
         [NSThread sleepForTimeInterval:3];
-        self.baby.PersonStatus = PersonStatusHungry;//baby饿了
-        self.adult.PersonStatus = PersonStatusHungry;//adult饿了
+        self.baby.status = PersonStatusHungry;//baby饿了
+        self.adult.status = PersonStatusHungry;//adult饿了
         
         //self.baby->name 没有setter方法 此处直接修改name，无法触发KVO监听
         [self.baby firstTimeChangeName];//改名为“庞麦郎”;
@@ -54,8 +54,8 @@
     
     [NSThread detachNewThreadWithBlock:^{
         [NSThread sleepForTimeInterval:6];
-        self.baby.PersonStatus = PersonStatusUnknown;
-        self.adult.PersonStatus = PersonStatusUnknown;
+        self.baby.status = PersonStatusUnknown;
+        self.adult.status = PersonStatusUnknown;
         
         //self->baby->name 没有setter方法 此处手动调用KVO监听
         [self.baby willChangeValueForKey:@"name"];
@@ -67,7 +67,7 @@
         [NSThread sleepForTimeInterval:10];
         
         //使用kVC方式修改baby饥饿状态，可以触发KVO监听
-        [self.baby setValue:@(PersonStatusFull) forKey:@"PersonStatus"];
+        [self.baby setValue:@(PersonStatusFull) forKey:@"status"];
         //第三次改名，使用KVC方式改名,即使没有setter方法、没有手动调用KVO，也能触发KVO监听
         [self.baby setValue:@"直播带货·庞麦郎" forKey:@"name"];
         
@@ -75,7 +75,7 @@
 }
 -(void)dealloc{
     //已经移除过的observer再次移除会crash，出现NSRangeException越界异常
-    [self.baby removeObserver:self forKeyPath:@"PersonStatus" context:@"监控baby饥饿状态"];
+    [self.baby removeObserver:self forKeyPath:@"status" context:@"监控baby饥饿状态"];
     //如果忘记移除，则也可能出现crash。因此 注册和移除 必须成对出现。
     
     [self.baby removeObserver:self forKeyPath:@"name" context:@"监控baby名字"];
@@ -85,7 +85,7 @@
 //    NSLog(@"监控到如下内容:\nkeyPath==%@\nobject==%@\nchange==%@\ncontext==%@",keyPath,object,change,context);
     
     
-    if (object==self.baby && [keyPath isEqualToString:@"PersonStatus"]) {//若监控到的结果是 baby 的 PersonStatus
+    if (object==self.baby && [keyPath isEqualToString:@"status"]) {//若监控到的结果是 baby 的 status
         //[dict valueForkey:]传出的是指针,类型位valueType，此处已经在方法头部被指定为id类型
 //        NSInteger kind =  [[change valueForKey:@"kind"] integerValue];//TODO: kind == 1 到底代表什么呢？
 //        NSInteger old = [[change valueForKey:@"old"] integerValue];
