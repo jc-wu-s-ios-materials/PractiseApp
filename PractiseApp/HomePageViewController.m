@@ -14,6 +14,7 @@
 #import "WelcomeToSandBoxViewController.h"
 #import "AllMyLockVC.h"
 #import "KVO_ViewController.h"
+#import "KVC_ViewController.h"
 @interface HomePageViewController ()
 @property (nonatomic, strong) UILabel *LabelForShowResults;
 //btn1 - btn3 练习 NotificationCenter DefaultCenter
@@ -84,7 +85,8 @@
     
 //    [self gotoNextVCViaBtn:self.lockBtn6];//自动前往NSRecursiveLock页
     
-    [self gotoKVO];//自动前往KVO练习
+//    [self gotoKVO];//自动前往KVO练习
+    [self gotoKVC];//自动前往KVC练习
 }
 
 
@@ -344,6 +346,11 @@
 }
 -(void)gotoKVO{
     KVO_ViewController *vc = [[KVO_ViewController alloc]init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+-(void)gotoKVC{
+    KVC_ViewController *vc = [[KVC_ViewController alloc]init];
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
 }
