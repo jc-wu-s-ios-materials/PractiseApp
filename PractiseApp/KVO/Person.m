@@ -10,4 +10,12 @@
 
 
 @implementation Person
+
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        self.PersonStatus = PersonStatusUnknown;
+    }
+    return self;
+}
 @end
