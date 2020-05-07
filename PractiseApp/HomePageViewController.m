@@ -31,6 +31,8 @@
 @property (nonatomic, strong) UIButton *lockBtn3;//Semaphore信号量
 @property (nonatomic, strong) UIButton *lockBtn4;//NSCondition条件锁
 
+@property (nonatomic, strong) UIButton *lockBtn6;//NSRecursiveLockVC递归锁
+
 
 
 
@@ -77,7 +79,9 @@
 //    [self gotoNextVCViaBtn:self.lockBtn1];//自动前往NSLock页
 //    [self gotoNextVCViaBtn:self.lockBtn2];//自动前往synchronize页
 //    [self gotoNextVCViaBtn:self.lockBtn3];//自动前往semaphore页
-    [self gotoNextVCViaBtn:self.lockBtn4];//自动前往NSCondition页
+//    [self gotoNextVCViaBtn:self.lockBtn4];//自动前往NSCondition页
+    
+    [self gotoNextVCViaBtn:self.lockBtn6];//自动前往NSRecursiveLock页
 }
 
 
@@ -168,6 +172,10 @@
         [self presentViewController:vc animated:YES completion:nil];
     }else if (sender == self.lockBtn4){//前往NSCondition条件锁
         NSConditionVC *vc = [[NSConditionVC alloc]init];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    }else if (sender == self.lockBtn6){//前往NSRecursiveLock递归锁，可重入锁
+        NSRecursiveLockVC *vc = [[NSRecursiveLockVC alloc]init];
         vc.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:vc animated:YES completion:nil];
     }
@@ -318,6 +326,17 @@
     [self.lockBtn4 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.lockBtn1);
         make.leading.mas_equalTo(self.lockBtn3.mas_trailing).offset(2);
+    }];
+    
+    //NSRecursiveLockVC 递归锁/可重入锁
+    self.lockBtn6 = [[UIButton alloc]init];
+    self.lockBtn6.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:.7];
+    [self.lockBtn6 setTitle:@"前往 递归锁" forState:UIControlStateNormal];
+    [self.lockBtn6 addTarget:self action:@selector(gotoNextVCViaBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.lockBtn6];
+    [self.lockBtn6 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.lockBtn1);
+        make.leading.mas_equalTo(self.lockBtn4.mas_trailing).offset(2);//TODO: 此处暂时接着4
     }];
 }
 @end
