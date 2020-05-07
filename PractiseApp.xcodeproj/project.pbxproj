@@ -23,6 +23,7 @@
 		6D1A0EE02463A8E300682871 /* KVO_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EDF2463A8E300682871 /* KVO_ViewController.m */; };
 		6D1A0EE42463DEE200682871 /* KVC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EE32463DEE200682871 /* KVC_ViewController.m */; };
 		6D1A0EE72463DEF600682871 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EE62463DEF600682871 /* Man.m */; };
+		6D1A0EEA2463EC5800682871 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1A0EE92463EC5800682871 /* libAFNetworking.a */; };
 		6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C712456B93E000AFCEA /* AppDelegate.m */; };
 		6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C742456B93E000AFCEA /* SceneDelegate.m */; };
 		6D671C782456B93E000AFCEA /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C772456B93E000AFCEA /* HomePageViewController.m */; };
@@ -79,6 +80,8 @@
 		6D1A0EE32463DEE200682871 /* KVC_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVC_ViewController.m; sourceTree = "<group>"; };
 		6D1A0EE52463DEF600682871 /* Man.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
 		6D1A0EE62463DEF600682871 /* Man.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
+		6D1A0EE92463EC5800682871 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1A0EEB2463EC6100682871 /* DoraemonKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = DoraemonKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C6D2456B93E000AFCEA /* PractiseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PractiseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C702456B93E000AFCEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D671C712456B93E000AFCEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 			files = (
 				6D671C922456BAF5000AFCEA /* libIQKeyboardManager.a in Frameworks */,
 				6D671C962456BB06000AFCEA /* libPods-PractiseApp.a in Frameworks */,
+				6D1A0EEA2463EC5800682871 /* libAFNetworking.a in Frameworks */,
 				6D671CBD24599437000AFCEA /* libYYKit.a in Frameworks */,
 				6D671C9A2456BB0D000AFCEA /* libZYCornerRadius.a in Frameworks */,
 				4B787A0E45FE413D51FD0469 /* libPods-PractiseApp.a in Frameworks */,
@@ -196,6 +200,13 @@
 			path = KVC;
 			sourceTree = "<group>";
 		};
+		6D1A0EE82463E6F300682871 /* AFNetworking_Practise */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AFNetworking_Practise;
+			sourceTree = "<group>";
+		};
 		6D671C642456B93E000AFCEA = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +246,7 @@
 				6D671CA72457C68C000AFCEA /* MultiThreadViewControllers */,
 				6D1A0EAB2462541700682871 /* Lock */,
 				6D671CA02456BCF0000AFCEA /* BaseClass */,
+				6D1A0EE82463E6F300682871 /* AFNetworking_Practise */,
 			);
 			path = PractiseApp;
 			sourceTree = "<group>";
@@ -275,6 +287,8 @@
 		D7C613D515C3606789B4E2F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D1A0EEB2463EC6100682871 /* DoraemonKit.bundle */,
+				6D1A0EE92463EC5800682871 /* libAFNetworking.a */,
 				6D671CBC24599437000AFCEA /* libYYKit.a */,
 				6D671C992456BB0D000AFCEA /* libZYCornerRadius.a */,
 				6D671C972456BB0A000AFCEA /* libSocketRocket.a */,

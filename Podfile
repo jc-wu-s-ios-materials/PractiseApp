@@ -14,4 +14,5 @@ pod 'IQKeyboardManager'
 pod 'DoraemonKit/Core', '~> 3.0.1', :configurations => ['Debug'] #Required
 pod 'DoraemonKit/WithGPS', '~> 3.0.1', :configurations => ['Debug'] #Optional
 pod 'DoraemonKit/WithLoad', '~> 3.0.1', :configurations => ['Debug'] #Optional
+pod 'AFNetworking', '~> 4.0'
 end
