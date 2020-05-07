@@ -19,6 +19,8 @@
 		6D1A0ED02462578C00682871 /* BarrierVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0ECF2462578C00682871 /* BarrierVC.m */; };
 		6D1A0ED62462672800682871 /* SomeThing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0ED52462672800682871 /* SomeThing.m */; };
 		6D1A0ED92462C15200682871 /* NSConditionLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0ED82462C15200682871 /* NSConditionLockVC.m */; };
+		6D1A0EDD2463A64000682871 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EDC2463A64000682871 /* Person.m */; };
+		6D1A0EE02463A8E300682871 /* KVO_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EDF2463A8E300682871 /* KVO_ViewController.m */; };
 		6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C712456B93E000AFCEA /* AppDelegate.m */; };
 		6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C742456B93E000AFCEA /* SceneDelegate.m */; };
 		6D671C782456B93E000AFCEA /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C772456B93E000AFCEA /* HomePageViewController.m */; };
@@ -67,6 +69,10 @@
 		6D1A0ED52462672800682871 /* SomeThing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SomeThing.m; sourceTree = "<group>"; };
 		6D1A0ED72462C15200682871 /* NSConditionLockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSConditionLockVC.h; sourceTree = "<group>"; };
 		6D1A0ED82462C15200682871 /* NSConditionLockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSConditionLockVC.m; sourceTree = "<group>"; };
+		6D1A0EDB2463A64000682871 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		6D1A0EDC2463A64000682871 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		6D1A0EDE2463A8E300682871 /* KVO_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVO_ViewController.h; sourceTree = "<group>"; };
+		6D1A0EDF2463A8E300682871 /* KVO_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVO_ViewController.m; sourceTree = "<group>"; };
 		6D671C6D2456B93E000AFCEA /* PractiseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PractiseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C702456B93E000AFCEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D671C712456B93E000AFCEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -162,6 +168,17 @@
 			path = Lock;
 			sourceTree = "<group>";
 		};
+		6D1A0EDA2463A5BB00682871 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				6D1A0EDB2463A64000682871 /* Person.h */,
+				6D1A0EDC2463A64000682871 /* Person.m */,
+				6D1A0EDE2463A8E300682871 /* KVO_ViewController.h */,
+				6D1A0EDF2463A8E300682871 /* KVO_ViewController.m */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
 		6D671C642456B93E000AFCEA = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +212,7 @@
 				6D671C842456B940000AFCEA /* Info.plist */,
 				6D671C852456B940000AFCEA /* main.m */,
 				6D671C7C2456B93E000AFCEA /* PractiseApp.xcdatamodeld */,
+				6D1A0EDA2463A5BB00682871 /* KVO */,
 				6D671CB8245964D7000AFCEA /* SandBox */,
 				6D671CA72457C68C000AFCEA /* MultiThreadViewControllers */,
 				6D1A0EAB2462541700682871 /* Lock */,
@@ -397,6 +415,7 @@
 				6D671CBB24596646000AFCEA /* WelcomeToSandBoxViewController.m in Sources */,
 				6D1A0EC42462567500682871 /* NSRecursiveLockVC.m in Sources */,
 				6D1A0ECA246256BF00682871 /* POSIX_VC.m in Sources */,
+				6D1A0EE02463A8E300682871 /* KVO_ViewController.m in Sources */,
 				6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */,
 				6D1A0EBE246255EC00682871 /* SemaphoreVC.m in Sources */,
 				6D1A0EB72462556800682871 /* NSLockVC.m in Sources */,
@@ -405,6 +424,7 @@
 				6D1A0ECD2462575000682871 /* OSSpinLockVC.m in Sources */,
 				6D671CB324583CEA000AFCEA /* NSOperationViewController.m in Sources */,
 				6D1A0ED62462672800682871 /* SomeThing.m in Sources */,
+				6D1A0EDD2463A64000682871 /* Person.m in Sources */,
 				6D1A0EC72462569700682871 /* NSDistributedLockVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
