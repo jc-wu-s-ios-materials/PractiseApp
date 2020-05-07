@@ -16,6 +16,7 @@
 #import "KVO_ViewController.h"
 #import "KVC_ViewController.h"
 #import "AFN_ViewController.h"
+#import "YYK_ViewController.h"
 @interface HomePageViewController ()
 @property (nonatomic, strong) UILabel *LabelForShowResults;
 //btn1 - btn3 练习 NotificationCenter DefaultCenter
@@ -88,7 +89,8 @@
     
 //    [self gotoKVO];//自动前往KVO练习
 //    [self gotoKVC];//自动前往KVC练习 未做完
-    [self gotoAFN];//自动前往AFNetworking练习
+//    [self gotoAFN];//自动前往AFNetworking练习
+    [self gotoYY];//自动前往YYKit练习
 }
 
 
@@ -358,6 +360,11 @@
 }
 -(void)gotoAFN{
     AFN_ViewController *vc = [[AFN_ViewController alloc]init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+-(void)gotoYY{
+    YYK_ViewController *vc = [[YYK_ViewController alloc]init];
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
 }
