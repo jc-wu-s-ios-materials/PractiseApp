@@ -15,7 +15,14 @@ typedef NS_ENUM(NSInteger,PersonStatus) {
     PersonStatusUnknown = 3
 };
 @interface Person : NSObject
+{
+    @private
+    NSString* name;
+}
 @property (nonatomic,assign) NSInteger PersonStatus;
+
+-(void)firstTimeChangeName;
+-(void)secondTimeChangeName;
 @end
 
 NS_ASSUME_NONNULL_END

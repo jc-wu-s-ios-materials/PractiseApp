@@ -15,7 +15,14 @@
     self = [super init];
     if (self) {
         self.PersonStatus = PersonStatusUnknown;
+        self->name = @"还没名字";
     }
     return self;
+}
+-(void)firstTimeChangeName{
+    self->name = @"庞麦郎";
+}
+-(void)secondTimeChangeName{
+    self->name = @"约瑟夫·庞麦郎";
 }
 @end
