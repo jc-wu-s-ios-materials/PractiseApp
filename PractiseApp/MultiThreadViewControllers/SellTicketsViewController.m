@@ -13,7 +13,7 @@
 @interface TicketsPool : NSObject
 @property (nonatomic) NSInteger ticketsCount;
 @property (nonatomic) NSLock *lock;
-
+-(instancetype)init NS_UNAVAILABLE;
 +(instancetype)sharedInstance;
 @end
 @implementation TicketsPool
