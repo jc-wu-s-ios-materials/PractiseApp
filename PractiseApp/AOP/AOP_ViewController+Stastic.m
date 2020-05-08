@@ -15,14 +15,13 @@
 @implementation AOP_ViewController (Stastic)
 
 +(void)load{
-    swizzleMethod([self class], @selector(viewDidAppear:), @selector(swizzle_viewDidAppear:));
+    swizzleMethod([self class], @selector(viewDidLoad), @selector(swizzle_viewDidLoad));
 }
-
--(void)swizzle_viewDidAppear:(BOOL)animated{
-    //call original implementation
-    [self swizzle_viewDidAppear:animated];
+-(void)swizzle_viewDidLoad{
     //begain static event
     [Stastic stasticWithEventName:@"AOP做法:AOP_ViewController"];
+    //call original implementation
+    [self swizzle_viewDidLoad];
 }
 
 void swizzleMethod(Class class , SEL originalSelector , SEL swizzledSelector){
