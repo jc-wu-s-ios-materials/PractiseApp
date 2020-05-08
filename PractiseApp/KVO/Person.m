@@ -7,7 +7,13 @@
 //
 
 #import "Person.h"
-
+@interface Person ()
+{
+    @private
+    NSString* colorOfSock;//袜子颜色
+}
+@property (nonatomic, strong) NSString *sex;
+@end
 
 @implementation Person
 
@@ -16,6 +22,8 @@
     if (self) {
         self.status = PersonStatusUnknown;
         self->name = @"还没名字";
+        self.sex = @"性别未知";
+        self->colorOfSock = @"未知颜色";
     }
     return self;
 }

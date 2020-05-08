@@ -11,7 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Man : NSObject
-
+{
+    @private
+    NSString* colorOfSock;//袜子颜色
+    @public
+    NSString* colorOfHair;//头发颜色
+}
+@property (nonatomic, copy) NSString *colorOfCoat;//外套颜色
 @end
 
 NS_ASSUME_NONNULL_END
