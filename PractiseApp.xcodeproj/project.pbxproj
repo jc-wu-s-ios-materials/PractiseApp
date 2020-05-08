@@ -31,6 +31,7 @@
 		6D1A0EFD246507EC00682871 /* Stastic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EFC246507EC00682871 /* Stastic.m */; };
 		6D1A0F0724650CA500682871 /* AOP_ViewController+Stastic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0F0624650CA500682871 /* AOP_ViewController+Stastic.m */; };
 		6D1A0F092465618800682871 /* libAspects.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1A0F082465618800682871 /* libAspects.a */; };
+		6D1A0F0C24656DFB00682871 /* Guy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0F0B24656DFB00682871 /* Guy.m */; };
 		6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C712456B93E000AFCEA /* AppDelegate.m */; };
 		6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C742456B93E000AFCEA /* SceneDelegate.m */; };
 		6D671C782456B93E000AFCEA /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C772456B93E000AFCEA /* HomePageViewController.m */; };
@@ -101,6 +102,8 @@
 		6D1A0F0524650CA500682871 /* AOP_ViewController+Stastic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AOP_ViewController+Stastic.h"; sourceTree = "<group>"; };
 		6D1A0F0624650CA500682871 /* AOP_ViewController+Stastic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AOP_ViewController+Stastic.m"; sourceTree = "<group>"; };
 		6D1A0F082465618800682871 /* libAspects.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAspects.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1A0F0A24656DFB00682871 /* Guy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Guy.h; sourceTree = "<group>"; };
+		6D1A0F0B24656DFB00682871 /* Guy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Guy.m; sourceTree = "<group>"; };
 		6D671C6D2456B93E000AFCEA /* PractiseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PractiseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C702456B93E000AFCEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D671C712456B93E000AFCEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -248,6 +251,8 @@
 				6D1A0EFC246507EC00682871 /* Stastic.m */,
 				6D1A0F0524650CA500682871 /* AOP_ViewController+Stastic.h */,
 				6D1A0F0624650CA500682871 /* AOP_ViewController+Stastic.m */,
+				6D1A0F0A24656DFB00682871 /* Guy.h */,
+				6D1A0F0B24656DFB00682871 /* Guy.m */,
 			);
 			path = AOP;
 			sourceTree = "<group>";
@@ -504,6 +509,7 @@
 				6D1A0EFA246506AB00682871 /* AOP_ViewController.m in Sources */,
 				6D1A0EB72462556800682871 /* NSLockVC.m in Sources */,
 				6D671CA32456BD52000AFCEA /* BaseViewController.m in Sources */,
+				6D1A0F0C24656DFB00682871 /* Guy.m in Sources */,
 				6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */,
 				6D1A0ECD2462575000682871 /* OSSpinLockVC.m in Sources */,
 				6D1A0EFD246507EC00682871 /* Stastic.m in Sources */,
