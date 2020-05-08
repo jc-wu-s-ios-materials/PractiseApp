@@ -27,6 +27,7 @@
 		6D1A0EF02463ED2300682871 /* AFN_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EEF2463ED2300682871 /* AFN_ViewController.m */; };
 		6D1A0EF22463EDDE00682871 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1A0EF12463EDDE00682871 /* libAFNetworking.a */; };
 		6D1A0EF6246412FE00682871 /* YYK_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EF5246412FE00682871 /* YYK_ViewController.m */; };
+		6D1A0EFA246506AB00682871 /* AOP_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EF9246506AB00682871 /* AOP_ViewController.m */; };
 		6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C712456B93E000AFCEA /* AppDelegate.m */; };
 		6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C742456B93E000AFCEA /* SceneDelegate.m */; };
 		6D671C782456B93E000AFCEA /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C772456B93E000AFCEA /* HomePageViewController.m */; };
@@ -90,6 +91,8 @@
 		6D1A0EF12463EDDE00682871 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1A0EF4246412FE00682871 /* YYK_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYK_ViewController.h; sourceTree = "<group>"; };
 		6D1A0EF5246412FE00682871 /* YYK_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYK_ViewController.m; sourceTree = "<group>"; };
+		6D1A0EF8246506AB00682871 /* AOP_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AOP_ViewController.h; sourceTree = "<group>"; };
+		6D1A0EF9246506AB00682871 /* AOP_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AOP_ViewController.m; sourceTree = "<group>"; };
 		6D671C6D2456B93E000AFCEA /* PractiseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PractiseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C702456B93E000AFCEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D671C712456B93E000AFCEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -227,6 +230,15 @@
 			path = YYKit_Practise;
 			sourceTree = "<group>";
 		};
+		6D1A0EF72465068400682871 /* AOP */ = {
+			isa = PBXGroup;
+			children = (
+				6D1A0EF8246506AB00682871 /* AOP_ViewController.h */,
+				6D1A0EF9246506AB00682871 /* AOP_ViewController.m */,
+			);
+			path = AOP;
+			sourceTree = "<group>";
+		};
 		6D671C642456B93E000AFCEA = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +274,7 @@
 				6D671C7C2456B93E000AFCEA /* PractiseApp.xcdatamodeld */,
 				6D1A0EDA2463A5BB00682871 /* KVO */,
 				6D1A0EE12463DE7C00682871 /* KVC */,
+				6D1A0EF72465068400682871 /* AOP */,
 				6D671CB8245964D7000AFCEA /* SandBox */,
 				6D671CA72457C68C000AFCEA /* MultiThreadViewControllers */,
 				6D1A0EAB2462541700682871 /* Lock */,
@@ -474,6 +487,7 @@
 				6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */,
 				6D1A0EF02463ED2300682871 /* AFN_ViewController.m in Sources */,
 				6D1A0EBE246255EC00682871 /* SemaphoreVC.m in Sources */,
+				6D1A0EFA246506AB00682871 /* AOP_ViewController.m in Sources */,
 				6D1A0EB72462556800682871 /* NSLockVC.m in Sources */,
 				6D671CA32456BD52000AFCEA /* BaseViewController.m in Sources */,
 				6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */,

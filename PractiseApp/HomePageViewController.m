@@ -17,6 +17,7 @@
 #import "KVC_ViewController.h"
 #import "AFN_ViewController.h"
 #import "YYK_ViewController.h"
+#import "AOP_ViewController.h"
 @interface HomePageViewController ()
 @property (nonatomic, strong) UILabel *LabelForShowResults;
 //btn1 - btn3 练习 NotificationCenter DefaultCenter
@@ -88,9 +89,10 @@
 //    [self gotoNextVCViaBtn:self.lockBtn6];//自动前往NSRecursiveLock页
     
 //    [self gotoKVO];//自动前往KVO练习
-    [self gotoKVC];//自动前往KVC练习 未做完
+//    [self gotoKVC];//自动前往KVC练习
 //    [self gotoAFN];//自动前往AFNetworking练习
 //    [self gotoYY];//自动前往YYKit练习
+    [self gotoAOP];//自动前往AOP练习
 }
 
 
@@ -365,6 +367,11 @@
 }
 -(void)gotoYY{
     YYK_ViewController *vc = [[YYK_ViewController alloc]init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+-(void)gotoAOP{
+    AOP_ViewController *vc = [[AOP_ViewController alloc]init];
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
 }
