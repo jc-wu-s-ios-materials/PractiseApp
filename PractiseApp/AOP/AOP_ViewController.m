@@ -7,6 +7,7 @@
 //
 
 #import "AOP_ViewController.h"
+#import "Stastic.h"
 
 @interface AOP_ViewController ()
 
@@ -17,17 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@",_HERE);
-    // Do any additional setup after loading the view.
+    
+    //一般的做法(非AOP)
+    [Stastic stasticWithEventName:@"AOP_ViewController"];
+    
+    //AOP做法
+    //创建了 AOP_ViewController+Stastic .h.m 文件
+    //交换了 -viewdidappaer: 和 -swizzle_viewdidappear: 方法
+    //在 新的-viewdidappear: 方法中首先调用原来的 -viewdidappear方法 然后加上了一句\
+            [Stastic stasticWithEventName:@"AOP做法----> AOP_ViewController"];
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
