@@ -20,7 +20,7 @@
     NSLog(@"%@",_HERE);
     
     //一般的做法(非AOP)
-    [Stastic stasticWithEventName:@"AOP_ViewController"];
+    [Stastic stasticWithEventName:@"普通做法:AOP_ViewController"];
     
     //AOP做法
     //创建了 AOP_ViewController+Stastic .h.m 文件

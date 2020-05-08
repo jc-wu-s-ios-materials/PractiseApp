@@ -22,11 +22,12 @@
     //call original implementation
     [self swizzle_viewDidAppear:animated];
     //begain static event
-    [Stastic stasticWithEventName:@"AOP做法----> AOP_ViewController"];
+    [Stastic stasticWithEventName:@"AOP做法:AOP_ViewController"];
 }
 
 void swizzleMethod(Class class , SEL originalSelector , SEL swizzledSelector){
     //  the method might not exist in the class, but in its superclass
+    //  不直接进行交换的理由是，不希望改变superclass中的实现，只希望为class添加实现或者替换实现
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
     Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
     
