@@ -30,6 +30,7 @@
 		6D1A0EFA246506AB00682871 /* AOP_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EF9246506AB00682871 /* AOP_ViewController.m */; };
 		6D1A0EFD246507EC00682871 /* Stastic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0EFC246507EC00682871 /* Stastic.m */; };
 		6D1A0F0724650CA500682871 /* AOP_ViewController+Stastic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0F0624650CA500682871 /* AOP_ViewController+Stastic.m */; };
+		6D1A0F092465618800682871 /* libAspects.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1A0F082465618800682871 /* libAspects.a */; };
 		6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C712456B93E000AFCEA /* AppDelegate.m */; };
 		6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C742456B93E000AFCEA /* SceneDelegate.m */; };
 		6D671C782456B93E000AFCEA /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C772456B93E000AFCEA /* HomePageViewController.m */; };
@@ -99,6 +100,7 @@
 		6D1A0EFC246507EC00682871 /* Stastic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stastic.m; sourceTree = "<group>"; };
 		6D1A0F0524650CA500682871 /* AOP_ViewController+Stastic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AOP_ViewController+Stastic.h"; sourceTree = "<group>"; };
 		6D1A0F0624650CA500682871 /* AOP_ViewController+Stastic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AOP_ViewController+Stastic.m"; sourceTree = "<group>"; };
+		6D1A0F082465618800682871 /* libAspects.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAspects.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C6D2456B93E000AFCEA /* PractiseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PractiseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C702456B93E000AFCEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D671C712456B93E000AFCEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				6D671C922456BAF5000AFCEA /* libIQKeyboardManager.a in Frameworks */,
 				6D671C962456BB06000AFCEA /* libPods-PractiseApp.a in Frameworks */,
 				6D1A0EEA2463EC5800682871 /* libAFNetworking.a in Frameworks */,
+				6D1A0F092465618800682871 /* libAspects.a in Frameworks */,
 				6D671CBD24599437000AFCEA /* libYYKit.a in Frameworks */,
 				6D671C9A2456BB0D000AFCEA /* libZYCornerRadius.a in Frameworks */,
 				4B787A0E45FE413D51FD0469 /* libPods-PractiseApp.a in Frameworks */,
@@ -331,6 +334,7 @@
 		D7C613D515C3606789B4E2F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D1A0F082465618800682871 /* libAspects.a */,
 				6D1A0EF12463EDDE00682871 /* libAFNetworking.a */,
 				6D1A0EEB2463EC6100682871 /* DoraemonKit.bundle */,
 				6D1A0EE92463EC5800682871 /* libAFNetworking.a */,

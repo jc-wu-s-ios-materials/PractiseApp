@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
   - DoraemonKit/Core (3.0.1)
   - DoraemonKit/WithGPS (3.0.1):
     - DoraemonKit/Core
@@ -29,6 +30,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
+  - Aspects
   - DoraemonKit/Core (~> 3.0.1)
   - DoraemonKit/WithGPS (~> 3.0.1)
   - DoraemonKit/WithLoad (~> 3.0.1)
@@ -41,6 +43,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - Aspects
     - DoraemonKit
     - IQKeyboardManager
     - Masonry
@@ -50,6 +53,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   DoraemonKit: 00f8c55bec06e240f25e18ec5b7faa012dfbb827
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -57,6 +61,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 00b509d5573b532b2e3c141c3249abbd18bb7dff
+PODFILE CHECKSUM: 70f1d7028c411a621062dabb0e076f52f2aadaa1
 
 COCOAPODS: 1.9.1
