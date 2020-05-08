@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Guy : NSObject <AspectToken>
 @property (nonatomic, strong) NSString *name;//名字
 -(instancetype)init NS_UNAVAILABLE;
--(instancetype)initWithName NS_DESIGNATED_INITIALIZER;
+-(instancetype)initWithName:(NSString*)name NS_DESIGNATED_INITIALIZER;
 -(void)isAskedQuestionsHeDontKnow;//被问到不懂的问题
 
 @end

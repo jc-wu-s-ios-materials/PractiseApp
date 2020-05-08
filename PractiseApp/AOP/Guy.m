@@ -9,4 +9,15 @@
 #import "Guy.h"
 
 @implementation Guy
+
+- (instancetype)initWithName:(NSString *)name{
+    self = [super init];
+    if (self) {
+        self.name = name;
+    }
+    return self;
+}
+-(void)isAskedQuestionsHeDontKnow{
+    NSLog(@"%@说:我不知道",self.name);
+}
 @end
