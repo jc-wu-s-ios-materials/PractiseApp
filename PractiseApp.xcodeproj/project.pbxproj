@@ -32,6 +32,7 @@
 		6D1A0F0724650CA500682871 /* AOP_ViewController+Stastic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0F0624650CA500682871 /* AOP_ViewController+Stastic.m */; };
 		6D1A0F092465618800682871 /* libAspects.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1A0F082465618800682871 /* libAspects.a */; };
 		6D1A0F0C24656DFB00682871 /* Guy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0F0B24656DFB00682871 /* Guy.m */; };
+		6D1A0F10246C036C00682871 /* SingleTon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0F0F246C036C00682871 /* SingleTon.m */; };
 		6D671C722456B93E000AFCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C712456B93E000AFCEA /* AppDelegate.m */; };
 		6D671C752456B93E000AFCEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C742456B93E000AFCEA /* SceneDelegate.m */; };
 		6D671C782456B93E000AFCEA /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D671C772456B93E000AFCEA /* HomePageViewController.m */; };
@@ -104,6 +105,8 @@
 		6D1A0F082465618800682871 /* libAspects.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAspects.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1A0F0A24656DFB00682871 /* Guy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Guy.h; sourceTree = "<group>"; };
 		6D1A0F0B24656DFB00682871 /* Guy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Guy.m; sourceTree = "<group>"; };
+		6D1A0F0E246C036C00682871 /* SingleTon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleTon.h; sourceTree = "<group>"; };
+		6D1A0F0F246C036C00682871 /* SingleTon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleTon.m; sourceTree = "<group>"; };
 		6D671C6D2456B93E000AFCEA /* PractiseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PractiseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D671C702456B93E000AFCEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D671C712456B93E000AFCEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -257,6 +260,15 @@
 			path = AOP;
 			sourceTree = "<group>";
 		};
+		6D1A0F0D246C031500682871 /* SingleTonPattern */ = {
+			isa = PBXGroup;
+			children = (
+				6D1A0F0E246C036C00682871 /* SingleTon.h */,
+				6D1A0F0F246C036C00682871 /* SingleTon.m */,
+			);
+			path = SingleTonPattern;
+			sourceTree = "<group>";
+		};
 		6D671C642456B93E000AFCEA = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +302,7 @@
 				6D671C842456B940000AFCEA /* Info.plist */,
 				6D671C852456B940000AFCEA /* main.m */,
 				6D671C7C2456B93E000AFCEA /* PractiseApp.xcdatamodeld */,
+				6D1A0F0D246C031500682871 /* SingleTonPattern */,
 				6D1A0EDA2463A5BB00682871 /* KVO */,
 				6D1A0EE12463DE7C00682871 /* KVC */,
 				6D1A0EF72465068400682871 /* AOP */,
@@ -494,6 +507,7 @@
 				6D1A0ED02462578C00682871 /* BarrierVC.m in Sources */,
 				6D1A0EC12462563700682871 /* NSConditionVC.m in Sources */,
 				6D1A0EBB246255A600682871 /* SynchronizedVC.m in Sources */,
+				6D1A0F10246C036C00682871 /* SingleTon.m in Sources */,
 				6D671C7E2456B93E000AFCEA /* PractiseApp.xcdatamodeld in Sources */,
 				6D671CB0245801C5000AFCEA /* GCDViewController.m in Sources */,
 				6D671CB6245941B9000AFCEA /* SellTicketsViewController.m in Sources */,
