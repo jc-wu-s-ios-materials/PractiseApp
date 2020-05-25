@@ -18,6 +18,7 @@
 #import "AFN_ViewController.h"
 #import "YYK_ViewController.h"
 #import "AOP_ViewController.h"
+#import "Basics.h"
 @interface HomePageViewController ()
 @property (nonatomic, strong) UILabel *LabelForShowResults;
 //btn1 - btn3 练习 NotificationCenter DefaultCenter
@@ -92,7 +93,8 @@
 //    [self gotoKVC];//自动前往KVC练习
 //    [self gotoAFN];//自动前往AFNetworking练习
 //    [self gotoYY];//自动前往YYKit练习
-    [self gotoAOP];//自动前往AOP练习
+//    [self gotoAOP];//自动前往AOP练习
+    [self gotoMutableArray];//自动前往NSMutableArray练习
 }
 
 
@@ -372,6 +374,11 @@
 }
 -(void)gotoAOP{
     AOP_ViewController *vc = [[AOP_ViewController alloc]init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+-(void)gotoMutableArray{
+    NSMutableArrayVC *vc = [[NSMutableArrayVC alloc]init];
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
 }
