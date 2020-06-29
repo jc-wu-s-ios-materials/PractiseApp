@@ -56,6 +56,7 @@
 		6D671CBD24599437000AFCEA /* libYYKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D671CBC24599437000AFCEA /* libYYKit.a */; };
 		6D907091247B6EB600FAF4C0 /* NSMutableArrayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D907090247B6EB600FAF4C0 /* NSMutableArrayVC.m */; };
 		6D907094247B6F2F00FAF4C0 /* Basics.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D907093247B6F2F00FAF4C0 /* Basics.m */; };
+		6DF3EBA124A9D223004A8AB8 /* parseFrog.rb in Resources */ = {isa = PBXBuildFile; fileRef = 6DF3EBA024A9D223004A8AB8 /* parseFrog.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,7 @@
 		6D907090247B6EB600FAF4C0 /* NSMutableArrayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSMutableArrayVC.m; sourceTree = "<group>"; };
 		6D907092247B6F2F00FAF4C0 /* Basics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Basics.h; sourceTree = "<group>"; };
 		6D907093247B6F2F00FAF4C0 /* Basics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Basics.m; sourceTree = "<group>"; };
+		6DF3EBA024A9D223004A8AB8 /* parseFrog.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = parseFrog.rb; sourceTree = "<group>"; };
 		77784D0E82F16B4E44BADB50 /* libPods-PractiseApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PractiseApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE93AD753810419B6038C41 /* Pods-PractiseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PractiseApp.debug.xcconfig"; path = "Target Support Files/Pods-PractiseApp/Pods-PractiseApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,6 +280,7 @@
 		6D671C642456B93E000AFCEA = {
 			isa = PBXGroup;
 			children = (
+				6DF3EB9F24A9D223004A8AB8 /* Tools */,
 				6D671C6F2456B93E000AFCEA /* PractiseApp */,
 				6D671C6E2456B93E000AFCEA /* Products */,
 				0A612D481FD88C4AFD37AF67 /* Pods */,
@@ -367,6 +370,14 @@
 			path = Basics;
 			sourceTree = "<group>";
 		};
+		6DF3EB9F24A9D223004A8AB8 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				6DF3EBA024A9D223004A8AB8 /* parseFrog.rb */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		D7C613D515C3606789B4E2F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +461,7 @@
 				6D671C832456B940000AFCEA /* LaunchScreen.storyboard in Resources */,
 				6D671C802456B940000AFCEA /* Assets.xcassets in Resources */,
 				6D671C7B2456B93E000AFCEA /* Main.storyboard in Resources */,
+				6DF3EBA124A9D223004A8AB8 /* parseFrog.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
